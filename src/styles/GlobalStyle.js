@@ -2,13 +2,16 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
-  html {
-    font-family: sans-serif;
+  :root {
+    --yellow: #FFCA2E;
+    --regular: 400;
+    --medium: 500;
+    --bold: 700;
+    --extraBold: 900;
   }
 
-  body {
-    position: relative;
-    height: 300vh;
+  html {
+    font-family: 'Montserrat', sans-serif;
   }
 
   h1,h2,h3,h4,h5,h6 {

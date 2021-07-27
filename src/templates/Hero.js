@@ -6,30 +6,13 @@ import { HiOutlineMail } from '@react-icons/all-files/hi/HiOutlineMail';
 import { FiLinkedin } from '@react-icons/all-files/fi/FiLinkedin';
 import { FiGithub } from '@react-icons/all-files/fi/FiGithub';
 import { FiInstagram } from '@react-icons/all-files/fi/FiInstagram';
-import CircleCorner from '../assets/circleCorner';
+import Button from '../components/Button';
 
 const StyledHeader = styled.header`
-  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   align-content: center;
   height: 100vh;
-
-  .circleCorner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    max-width: 35%;
-    max-height: 35%;
-
-    svg {
-      height: 100%;
-      width: auto;
-    }
-  }
 
   .wrapper {
     display: grid;
@@ -57,6 +40,7 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: center;
     gap: 15px;
+    z-index: 10;
 
     .fakeIcon {
       display: flex;
@@ -87,21 +71,9 @@ const StyledHeader = styled.header`
 
   h1 {
     text-align: center;
+    font-weight: var(--medium);
     font-size: 26px;
-  }
-
-  .checkOffer {
-    padding: 10px 35px;
-    font-size: 20px;
-    border-radius: 50px;
-    border: 2px solid #ffca2e;
-    background-color: #ffca2e;
-    cursor: pointer;
-    transition: all 0.3s;
-
-    &:hover {
-      background-color: white;
-    }
+    font-size: clamp(18px, 15vw, 26px);
   }
 `;
 
@@ -127,12 +99,7 @@ export default function Hero() {
           <Logo />
         </div>
         <h1>Strony i aplikacje internetowe</h1>
-        <button type="button" className="checkOffer">
-          sprawdź ofertę
-        </button>
-      </div>
-      <div className="circleCorner">
-        <CircleCorner />
+        <Button primary>sprawdź ofertę</Button>
       </div>
     </StyledHeader>
   );
