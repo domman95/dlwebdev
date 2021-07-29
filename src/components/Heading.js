@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const StyledHeading = styled.div``;
-
 const StyledH2 = styled.h2`
   font-size: 42px;
   font-size: clamp(20px, 10vw, 42px);
@@ -29,6 +27,7 @@ const StyledShadow = styled.h4`
   position: absolute;
   top: 0;
   left: 50%;
+  white-space: nowrap;
   transform: translate(-50%, 0%);
   font-size: 100px;
   font-size: clamp(80px, 10vw, 100px);
@@ -45,7 +44,7 @@ export default function Heading({ children, shadow = false }) {
     setText(children.split(''));
   }, [children]);
   return (
-    <StyledHeading>
+    <div>
       {shadow && <StyledShadow>{children}</StyledShadow>}
       <StyledH2>
         {text.map((letter, i) => {
@@ -56,6 +55,6 @@ export default function Heading({ children, shadow = false }) {
           }
         })}
       </StyledH2>
-    </StyledHeading>
+    </div>
   );
 }

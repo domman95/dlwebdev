@@ -46,7 +46,11 @@ export default function Button({
   tertiary,
 }) {
   return (
-    <StyledButton primary={primary} secondary={secondary} tertiary={tertiary}>
+    <StyledButton
+      className="button"
+      primary={primary}
+      secondary={secondary}
+      tertiary={tertiary}>
       {children}
     </StyledButton>
   );

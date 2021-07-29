@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './Button';
 
 const StyledCard = styled.div`
   display: grid;
@@ -9,11 +8,17 @@ const StyledCard = styled.div`
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.25);
   padding: 20px 10px;
+  max-width: 360px;
   gap: 10px;
   background-color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 
+  @media (min-width: 640px) and (max-width: 959px) {
+    &:nth-last-child(1) {
+      grid-column: 1 / -1;
+    }
+  }
   &:hover {
     transform: scale(1.01);
   }

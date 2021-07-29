@@ -2,11 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Logo from '../assets/logo';
-import { HiOutlineMail } from '@react-icons/all-files/hi/HiOutlineMail';
-import { FiLinkedin } from '@react-icons/all-files/fi/FiLinkedin';
-import { FiGithub } from '@react-icons/all-files/fi/FiGithub';
-import { FiInstagram } from '@react-icons/all-files/fi/FiInstagram';
 import Button from '../components/Button';
+import Socials from '../components/Socials';
 
 const StyledHeader = styled.header`
   display: grid;
@@ -37,36 +34,6 @@ const StyledHeader = styled.header`
   }
 
   .socials {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    z-index: 10;
-
-    .fakeIcon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 34px;
-      height: 34px;
-      padding: 0;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-
-      svg {
-        width: 100%;
-        height: 100%;
-        stroke-width: 1;
-
-        &:hover {
-          transform: skew(-7deg) scale(1.1);
-        }
-
-        path {
-          stroke-width: 1;
-        }
-      }
-    }
   }
 
   h1 {
@@ -81,20 +48,7 @@ export default function Hero() {
   return (
     <StyledHeader>
       <div className="wrapper">
-        <div className="socials">
-          <button className="fakeIcon">
-            <HiOutlineMail />
-          </button>
-          <button className="fakeIcon">
-            <FiLinkedin />
-          </button>
-          <button className="fakeIcon">
-            <FiGithub />
-          </button>
-          <button className="fakeIcon">
-            <FiInstagram />
-          </button>
-        </div>
+        <Socials />
         <div id="logo">
           <Logo />
         </div>

@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-
   :root {
     --yellow: #FFCA2E;
     --regular: 400;
@@ -15,8 +14,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    width: 100vw;
-    overflow-x: hidden;
+    /* width: 100vw; */
+    /* overflow-x: hidden; */
   }
 
   h1,h2,h3,h4,h5,h6 {

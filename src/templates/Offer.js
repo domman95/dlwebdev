@@ -7,8 +7,9 @@ import Section from '../components/Section';
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-auto-rows: 480px;
+  justify-items: center;
   width: 100%;
   gap: 40px;
   margin: 40px 0;
