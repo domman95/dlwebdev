@@ -12,6 +12,11 @@ const StyledCard = styled.div`
   gap: 10px;
   background-color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  &:hover {
+    transform: scale(1.01);
+  }
 
   h3 {
     font-weight: var(--bold);
@@ -27,7 +32,7 @@ const StyledCard = styled.div`
     font-weight: var(--regular);
   }
 
-  button {
+  .checkItOut {
     justify-self: start;
     margin: 0 20px;
     border: none;
@@ -36,6 +41,12 @@ const StyledCard = styled.div`
     letter-spacing: 1px;
     color: var(--yellow);
     text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      letter-spacing: 1.15px;
+    }
   }
 `;
 

@@ -7,17 +7,18 @@ import Section from '../components/Section';
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-auto-rows: 480px;
   width: 100%;
   gap: 40px;
   margin: 40px 0;
+  z-index: 10;
 `;
 
 export default function Offer() {
   return (
     <Section>
-      <Heading>Oferta</Heading>
+      <Heading shadow>Oferta</Heading>
       <Wrapper>
         <OfferCard
           title="Aplikacje internetowe"
