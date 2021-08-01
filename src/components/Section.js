@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
@@ -14,6 +14,6 @@ const StyledSection = styled.section`
   z-index: 100;
 `;
 
-export default function Section({ children }) {
-  return <StyledSection>{children}</StyledSection>;
+export default function Section({ children, id }) {
+  return <StyledSection id={id}>{children}</StyledSection>;
 }

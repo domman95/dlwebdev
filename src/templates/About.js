@@ -71,7 +71,7 @@ const Background = styled.div`
 export default function About() {
   return (
     <Background>
-      <Section>
+      <Section id="kim-jestem">
         <Heading shadow>kim jestem?</Heading>
         <StyledAbout>
           <div className="photo">

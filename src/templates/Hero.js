@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   display: grid;
   grid-template-columns: 1fr;
   align-content: center;
-  height: 100vh;
+  height: 95vh;
 
   .wrapper {
     display: grid;
@@ -19,6 +19,7 @@ const StyledHeader = styled.header`
     margin: 0 auto;
     padding: 10px 0;
     gap: 40px;
+    z-index: 10;
   }
 
   #logo {
@@ -46,7 +47,7 @@ const StyledHeader = styled.header`
 
 export default function Hero() {
   return (
-    <StyledHeader>
+    <StyledHeader id="strona główna">
       <div className="wrapper">
         <Socials />
         <div id="logo">

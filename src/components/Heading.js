@@ -17,7 +17,7 @@ const StyledH2 = styled.h2`
     cursor: default;
 
     &:hover {
-      transform: scale(1.15);
+      transform: scale(1.15) skewX(-5deg);
     }
   }
 `;

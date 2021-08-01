@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
 export default function Offer() {
   return (
-    <Section>
+    <Section id="oferta">
       <Heading shadow>Oferta</Heading>
       <Wrapper>
         <OfferCard
