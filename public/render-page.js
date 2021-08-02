@@ -2210,6 +2210,168 @@ module.exports = function (encodedURI) {
 
 /***/ }),
 
+/***/ "./node_modules/dom-confetti/lib/main.js":
+/*!***********************************************!*\
+  !*** ./node_modules/dom-confetti/lib/main.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.confetti = confetti;
+var defaultColors = ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"];
+
+function createElements(root, elementCount, colors, width, height) {
+  return Array.from({ length: elementCount }).map(function (_, index) {
+    var element = document.createElement("div");
+    var color = colors[index % colors.length];
+    element.style["background-color"] = color; // eslint-disable-line space-infix-ops
+    element.style.width = width;
+    element.style.height = height;
+    element.style.position = "absolute";
+    element.style.willChange = "transform, opacity";
+    element.style.visibility = "hidden";
+    root.appendChild(element);
+    return element;
+  });
+}
+
+function randomPhysics(angle, spread, startVelocity, random) {
+  var radAngle = angle * (Math.PI / 180);
+  var radSpread = spread * (Math.PI / 180);
+  return {
+    x: 0,
+    y: 0,
+    z: 0,
+    wobble: random() * 10,
+    wobbleSpeed: 0.1 + random() * 0.1,
+    velocity: startVelocity * 0.5 + random() * startVelocity,
+    angle2D: -radAngle + (0.5 * radSpread - random() * radSpread),
+    angle3D: -(Math.PI / 4) + random() * (Math.PI / 2),
+    tiltAngle: random() * Math.PI,
+    tiltAngleSpeed: 0.1 + random() * 0.3
+  };
+}
+
+function updateFetti(fetti, progress, dragFriction, decay) {
+  /* eslint-disable no-param-reassign */
+  fetti.physics.x += Math.cos(fetti.physics.angle2D) * fetti.physics.velocity;
+  fetti.physics.y += Math.sin(fetti.physics.angle2D) * fetti.physics.velocity;
+  fetti.physics.z += Math.sin(fetti.physics.angle3D) * fetti.physics.velocity;
+  fetti.physics.wobble += fetti.physics.wobbleSpeed;
+  // Backward compatibility
+  if (decay) {
+    fetti.physics.velocity *= decay;
+  } else {
+    fetti.physics.velocity -= fetti.physics.velocity * dragFriction;
+  }
+  fetti.physics.y += 3;
+  fetti.physics.tiltAngle += fetti.physics.tiltAngleSpeed;
+
+  var _fetti$physics = fetti.physics,
+      x = _fetti$physics.x,
+      y = _fetti$physics.y,
+      z = _fetti$physics.z,
+      tiltAngle = _fetti$physics.tiltAngle,
+      wobble = _fetti$physics.wobble;
+
+  var wobbleX = x + 10 * Math.cos(wobble);
+  var wobbleY = y + 10 * Math.sin(wobble);
+  var transform = "translate3d(" + wobbleX + "px, " + wobbleY + "px, " + z + "px) rotate3d(1, 1, 1, " + tiltAngle + "rad)";
+
+  fetti.element.style.visibility = "visible";
+  fetti.element.style.transform = transform;
+  fetti.element.style.opacity = 1 - progress;
+
+  /* eslint-enable */
+}
+
+function animate(root, fettis, dragFriction, decay, duration, stagger) {
+  var startTime = void 0;
+
+  return new Promise(function (resolve) {
+    function update(time) {
+      if (!startTime) startTime = time;
+      var elapsed = time - startTime;
+      var progress = startTime === time ? 0 : (time - startTime) / duration;
+      fettis.slice(0, Math.ceil(elapsed / stagger)).forEach(function (fetti) {
+        updateFetti(fetti, progress, dragFriction, decay);
+      });
+
+      if (time - startTime < duration) {
+        requestAnimationFrame(update);
+      } else {
+        fettis.forEach(function (fetti) {
+          if (fetti.element.parentNode === root) {
+            return root.removeChild(fetti.element);
+          }
+        });
+        resolve();
+      }
+    }
+
+    requestAnimationFrame(update);
+  });
+}
+
+var defaults = {
+  angle: 90,
+  spread: 45,
+  startVelocity: 45,
+  elementCount: 50,
+  width: "10px",
+  height: "10px",
+  perspective: "",
+  colors: defaultColors,
+  duration: 3000,
+  stagger: 0,
+  dragFriction: 0.1,
+  random: Math.random
+};
+
+function backwardPatch(config) {
+  if (!config.stagger && config.delay) {
+    config.stagger = config.delay;
+  }
+  return config;
+}
+
+function confetti(root) {
+  var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  var _Object$assign = Object.assign({}, defaults, backwardPatch(config)),
+      elementCount = _Object$assign.elementCount,
+      colors = _Object$assign.colors,
+      width = _Object$assign.width,
+      height = _Object$assign.height,
+      perspective = _Object$assign.perspective,
+      angle = _Object$assign.angle,
+      spread = _Object$assign.spread,
+      startVelocity = _Object$assign.startVelocity,
+      decay = _Object$assign.decay,
+      dragFriction = _Object$assign.dragFriction,
+      duration = _Object$assign.duration,
+      stagger = _Object$assign.stagger,
+      random = _Object$assign.random;
+
+  root.style.perspective = perspective;
+  var elements = createElements(root, elementCount, colors, width, height);
+  var fettis = elements.map(function (element) {
+    return {
+      element: element,
+      physics: randomPhysics(angle, spread, startVelocity, random)
+    };
+  });
+
+  return animate(root, fettis, dragFriction, decay, duration, stagger);
+}
+
+/***/ }),
+
 /***/ "./node_modules/filter-obj/index.js":
 /*!******************************************!*\
   !*** ./node_modules/filter-obj/index.js ***!
@@ -5236,17 +5398,6 @@ function HomePage({
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     const sections = document.querySelectorAll('.navSection');
 
-    function getPosition(element) {
-      var yPosition = 0;
-
-      while (element) {
-        yPosition += element.offsetTop - element.scrollTop + element.clientTop;
-        element = element.offsetParent;
-      }
-
-      return yPosition;
-    }
-
     function elementInViewport(el) {
       const id = el.id;
       let top = el.offsetTop;
@@ -5369,30 +5520,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
 /* harmony import */ var _components_BgWave__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/BgWave */ "./src/components/BgWave.js");
 /* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Button */ "./src/components/Button.js");
 /* harmony import */ var _components_Section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Section */ "./src/components/Section.js");
-/* harmony import */ var _react_icons_all_files_fa_FaRegPaperPlane__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @react-icons/all-files/fa/FaRegPaperPlane */ "./node_modules/@react-icons/all-files/fa/FaRegPaperPlane.js");
+/* harmony import */ var _react_icons_all_files_fa_FaRegPaperPlane__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @react-icons/all-files/fa/FaRegPaperPlane */ "./node_modules/@react-icons/all-files/fa/FaRegPaperPlane.js");
+/* harmony import */ var react_dom_confetti__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-dom-confetti */ "./node_modules/react-dom-confetti/lib/confetti.js");
 
 
 
 
 
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.div.withConfig({
+
+const config = {
+  angle: 90,
+  spread: 360,
+  startVelocity: 40,
+  elementCount: 70,
+  dragFriction: 0.12,
+  duration: 3000,
+  stagger: 3,
+  width: '10px',
+  height: '10px',
+  perspective: '500px',
+  colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
+};
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_5__.default.div.withConfig({
   displayName: "Contact__Wrapper"
-})(["width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;padding:60px 0;.email{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;font-size:46px;font-size:clamp(10px,5vw,46px);a{font-weight:var(--extraBold);color:white;text-decoration:none;text-transform:uppercase;margin-left:10px;&::before{content:'kliknij, aby skopiowa\u0107';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:white;padding:5px 20px;color:black;font-size:16px;font-weight:var(--regular);text-transform:lowercase;border-radius:20px;opacity:0;}&:hover{text-decoration:underline;}&:hover::before{opacity:1;}}svg{fill:white;}}"]);
+})(["width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;padding:60px 0;.email{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;font-size:46px;font-size:clamp(10px,5vw,46px);.copy{position:relative;font-weight:var(--extraBold);color:white;background-color:transparent;border:none;text-decoration:none;text-transform:uppercase;margin-left:10px;cursor:pointer;&::before{content:'kliknij, aby skopiowa\u0107';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:white;padding:5px 20px;color:black;font-size:16px;font-weight:var(--regular);text-transform:lowercase;border-radius:20px;opacity:0;}&:hover{text-decoration:underline;}&:hover::before{opacity:1;}}svg{fill:white;}}"]);
+const ConfettiWrapper = styled_components__WEBPACK_IMPORTED_MODULE_5__.default.div.withConfig({
+  displayName: "Contact__ConfettiWrapper"
+})(["position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"]);
 function Contact() {
+  const {
+    0: isCopied,
+    1: setIsCopied
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+
+  const copyToClipboard = str => {
+    const el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_BgWave__WEBPACK_IMPORTED_MODULE_1__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Section__WEBPACK_IMPORTED_MODULE_3__.default, {
     id: "kontakt"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "email"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_react_icons_all_files_fa_FaRegPaperPlane__WEBPACK_IMPORTED_MODULE_5__.FaRegPaperPlane, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_react_icons_all_files_fa_FaRegPaperPlane__WEBPACK_IMPORTED_MODULE_6__.FaRegPaperPlane, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "copy",
+    onClick: () => {
+      copyToClipboard('contact@dlwebdev.com');
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 3000);
+    }
+  }, "contact@dlwebdev.com"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ConfettiWrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_dom_confetti__WEBPACK_IMPORTED_MODULE_4__.default, {
+    active: isCopied,
+    config: config
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "mailto:contact@dlwebdev.com"
-  }, "contact@dlwebdev.com")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
     secondary: true
-  }, "napisz do mnie"))));
+  }, "napisz do mnie")))));
 }
 
 /***/ }),
@@ -14038,6 +14234,77 @@ exports.exclude = (input, filter, options) => {
 	return exports.pick(input, exclusionFilter, options);
 };
 
+
+/***/ }),
+
+/***/ "./node_modules/react-dom-confetti/lib/confetti.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-dom-confetti/lib/confetti.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _domConfetti = __webpack_require__(/*! dom-confetti */ "./node_modules/dom-confetti/lib/main.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var style = {
+  position: "relative"
+};
+
+var Confetti = function (_Component) {
+  _inherits(Confetti, _Component);
+
+  function Confetti(props) {
+    _classCallCheck(this, Confetti);
+
+    var _this = _possibleConstructorReturn(this, (Confetti.__proto__ || Object.getPrototypeOf(Confetti)).call(this, props));
+
+    _this.setRef = _this.setRef.bind(_this);
+    return _this;
+  }
+
+  _createClass(Confetti, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (!prevProps.active && this.props.active) {
+        (0, _domConfetti.confetti)(this.container, this.props.config);
+      }
+    }
+  }, {
+    key: "setRef",
+    value: function setRef(ref) {
+      this.container = ref;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement("div", { className: this.props.className, style: style, ref: this.setRef });
+    }
+  }]);
+
+  return Confetti;
+}(_react.Component);
+
+exports.default = Confetti;
 
 /***/ }),
 
