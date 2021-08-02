@@ -4,12 +4,12 @@ import GlobalStyle from '../styles/GlobalStyle';
 import SEO from './SEO';
 import Nav from './Nav';
 
-export default function Layout({ children }) {
+export default function Layout({ children, location }) {
   return (
     <>
       <SEO />
       <GlobalStyle />
-      <Nav />
+      <Nav location={location} />
       {children}
     </>
   );

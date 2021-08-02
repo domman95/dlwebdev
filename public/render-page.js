@@ -4895,9 +4895,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Layout({
-  children
+  children,
+  location
 }) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SEO__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__.default, null), children);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SEO__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__.default, {
+    location: location
+  }), children);
 }
 
 /***/ }),
@@ -4950,41 +4953,59 @@ __webpack_require__.r(__webpack_exports__);
 const StyledNav = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.nav.withConfig({
   displayName: "Nav__StyledNav"
 })(["position:fixed;top:50%;left:30px;transform:translate(0,-50%);z-index:110;background-color:white;padding:20px 5px;border-radius:30px;box-shadow:0px 4px 4px rgba(0,0,0,0.25);transition:0.3s linear;opacity:0.4;&:hover{opacity:1;}ul{display:flex;flex-direction:column;gap:10px;list-style:none;margin:0;padding:0;}.link{position:relative;display:flex;align-items:center;text-decoration:none;span{display:block;position:absolute;top:50%;left:50%;transform:translate(10px,-50%) skewX(70deg);padding:10px 20px;white-space:nowrap;pointer-events:none;opacity:0;color:black;transition:0.3s ease-in-out;}.circle{position:relative;width:20px;height:20px;border-radius:50%;border:2px solid var(--yellow);cursor:pointer;opacity:0.2;&:hover{opacity:1;}&:hover + span{opacity:1;transform:translate(10px,-50%) skewX(0);}&::before{display:none;content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;background-color:var(--yellow);width:80%;height:80%;}}&.active{.circle{opacity:1;}.circle::before{display:block;}}}"]);
-function Nav() {
+function Nav({
+  location
+}) {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const links = document.querySelectorAll('.link');
+
+    const activeClassName = () => {
+      links.forEach(link => {
+        const linkHash = link.hash;
+        const brHash = window.location.hash;
+
+        if (linkHash === brHash) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    };
+
+    activeClassName();
+    window.addEventListener('scroll', activeClassName);
+    return () => {
+      window.removeEventListener('scroll', activeClassName);
+    };
+  }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(StyledNav, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
     className: "link",
-    activeClassName: "active",
-    to: "/"
+    to: "#strona-glowna"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "circle"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "strona g\u0142\xF3wna"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
     className: "link",
-    activeClassName: "active",
-    to: "/#oferta"
+    to: "#oferta"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "circle"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "oferta"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
     className: "link",
-    activeClassName: "active",
-    to: "/#jak-pracuje"
+    to: "#jak-pracuje"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "circle"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "jak pracuj\u0119?"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
     className: "link",
-    activeClassName: "active",
-    to: "/#kim-jestem"
+    to: "#kim-jestem"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "circle"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "kim jestem?"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
     className: "link",
-    activeClassName: "active",
-    to: "/#portfolio"
+    to: "#portfolio"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "circle"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "portfolio"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
     className: "link",
-    activeClassName: "active",
-    to: "/#kontakt"
+    to: "#kontakt"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "circle"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "kontakt")))));
@@ -5080,7 +5101,8 @@ function Section({
   id
 }) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(StyledSection, {
-    id: id
+    id: id,
+    className: "navSection"
   }, children);
 }
 
@@ -5208,8 +5230,54 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function HomePage() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_1__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_Hero__WEBPACK_IMPORTED_MODULE_6__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Main__WEBPACK_IMPORTED_MODULE_2__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_Offer__WEBPACK_IMPORTED_MODULE_8__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_HowWork__WEBPACK_IMPORTED_MODULE_7__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_About__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_Portfolio__WEBPACK_IMPORTED_MODULE_9__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_Contact__WEBPACK_IMPORTED_MODULE_4__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_Footer__WEBPACK_IMPORTED_MODULE_5__.default, null));
+function HomePage({
+  location
+}) {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const sections = document.querySelectorAll('.navSection');
+
+    function getPosition(element) {
+      var yPosition = 0;
+
+      while (element) {
+        yPosition += element.offsetTop - element.scrollTop + element.clientTop;
+        element = element.offsetParent;
+      }
+
+      return yPosition;
+    }
+
+    function elementInViewport(el) {
+      const id = el.id;
+      let top = el.offsetTop;
+      const height = el.offsetHeight > 2000 ? el.offsetHeight / 4 : el.offsetHeight;
+
+      while (el.offsetParent) {
+        el = el.offsetParent;
+        top += el.offsetTop;
+      }
+
+      if (top >= window.pageYOffset && top + height <= window.pageYOffset + window.innerHeight) {
+        const hash = `#${id}`;
+        window.history.pushState(null, null, hash);
+        return id;
+      }
+    }
+
+    const scrollControl = () => {
+      sections.forEach(section => {
+        elementInViewport(section);
+      });
+    };
+
+    window.addEventListener('scroll', scrollControl);
+    return () => {
+      window.removeEventListener('scroll', scrollControl);
+    };
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_1__.default, {
+    location: location
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_Hero__WEBPACK_IMPORTED_MODULE_6__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Main__WEBPACK_IMPORTED_MODULE_2__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_Offer__WEBPACK_IMPORTED_MODULE_8__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_HowWork__WEBPACK_IMPORTED_MODULE_7__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_About__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_Portfolio__WEBPACK_IMPORTED_MODULE_9__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_Contact__WEBPACK_IMPORTED_MODULE_4__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_Footer__WEBPACK_IMPORTED_MODULE_5__.default, null));
 }
 
 /***/ }),
@@ -5387,7 +5455,8 @@ const StyledHeader = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.head
 })(["display:grid;grid-template-columns:1fr;align-content:center;height:95vh;.wrapper{display:grid;justify-items:center;max-width:1000px;width:100%;margin:0 auto;padding:10px 0;gap:40px;z-index:10;}#logo{display:flex;align-items:center;justify-content:center;padding:0 10px;width:90%;svg{width:100%;}}.socials{}h1{text-align:center;font-weight:var(--medium);font-size:26px;font-size:clamp(18px,15vw,26px);}"]);
 function Hero() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(StyledHeader, {
-    id: "strona g\u0142\xF3wna"
+    id: "strona-glowna",
+    className: "navSection"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Socials__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -5563,7 +5632,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_12__.default.div.withConfig({
   displayName: "Portfolio__Wrapper"
-})(["width:100%;column-count:1;column-gap:20px;margin:60px 0;@media (min-width:630px){column-count:2;}@media (min-width:1070px){column-count:3;}.project{display:inline-flex;flex-direction:column;width:100%;margin-bottom:20px;box-shadow:var(--shadow);border-radius:10px;overflow:hidden;.description{background-color:white;padding:10px 0;z-index:10;& *{margin:0;padding:5px;}.hashtag{font-weight:(--regular);font-size:16px;color:#cecece;}.title{font-weight:var(--bold);font-size:18px;}.checkItOut{justify-self:start;border:none;background:transparent;font-size:16px;letter-spacing:1px;color:var(--yellow);text-transform:uppercase;cursor:pointer;transition:all 0.3s;&:hover{letter-spacing:1.15px;}}}img{width:100%;height:auto;transition:transform 0.3s linear;&:hover{transform:scale(1.1);}}}"]);
+})(["width:100%;column-count:1;column-gap:20px;margin:60px 0;@media (min-width:630px){column-count:2;}@media (min-width:1070px){column-count:3;}.project{box-sizing:border-box;display:inline-flex;flex-direction:column;width:100%;margin-bottom:20px;box-shadow:var(--shadow);border-radius:10px;overflow:hidden;padding:10px;.image{display:flex;overflow:hidden;border-radius:10px;}.description{background-color:white;padding:10px 0;z-index:10;& *{margin:0;padding:5px;}.hashtag{font-weight:(--regular);font-size:16px;color:#cecece;}.title{font-weight:var(--bold);font-size:18px;}.checkItOut{justify-self:start;border:none;background:transparent;font-size:16px;letter-spacing:1px;color:var(--yellow);text-transform:uppercase;cursor:pointer;transition:all 0.3s;&:hover{letter-spacing:1.15px;}}}img{width:100%;height:auto;transition:transform 0.3s linear;&:hover{transform:scale(1.05);}}}"]);
 function Portfolio() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Section__WEBPACK_IMPORTED_MODULE_3__.default, {
     id: "portfolio"
@@ -5571,10 +5640,12 @@ function Portfolio() {
     shadow: true
   }, "portfolio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "project"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "image"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _assets_projects_iva_jpg__WEBPACK_IMPORTED_MODULE_4__.default,
     alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "description"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "hashtag"
@@ -5586,10 +5657,12 @@ function Portfolio() {
     className: "checkItOut"
   }, "sprawd\u017A szczeg\xF3\u0142y \u2192"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "project"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "image"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _assets_projects_renecup_jpg__WEBPACK_IMPORTED_MODULE_5__.default,
     alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "description"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "hashtag"
@@ -5601,10 +5674,12 @@ function Portfolio() {
     className: "checkItOut"
   }, "sprawd\u017A szczeg\xF3\u0142y \u2192"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "project"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "image"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _assets_projects_wyhaftowani_jpg__WEBPACK_IMPORTED_MODULE_9__.default,
     alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "description"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "hashtag"
@@ -5616,10 +5691,12 @@ function Portfolio() {
     className: "checkItOut"
   }, "sprawd\u017A szczeg\xF3\u0142y \u2192"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "project"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "image"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _assets_projects_trojakwebsite_jpg__WEBPACK_IMPORTED_MODULE_8__.default,
     alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "description"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "hashtag"
@@ -5631,10 +5708,12 @@ function Portfolio() {
     className: "checkItOut"
   }, "sprawd\u017A szczeg\xF3\u0142y \u2192"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "project"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "image"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _assets_projects_reneelogo_jpg__WEBPACK_IMPORTED_MODULE_6__.default,
     alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "description"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "hashtag"
@@ -5646,10 +5725,12 @@ function Portfolio() {
     className: "checkItOut"
   }, "sprawd\u017A szczeg\xF3\u0142y \u2192"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "project"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "image"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _assets_projects_wyhaftowani2_jpg__WEBPACK_IMPORTED_MODULE_10__.default,
     alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "description"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "hashtag"
@@ -5661,10 +5742,12 @@ function Portfolio() {
     className: "checkItOut"
   }, "sprawd\u017A szczeg\xF3\u0142y \u2192"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "project"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "image"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _assets_projects_wyhaftowani3_jpg__WEBPACK_IMPORTED_MODULE_11__.default,
     alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "description"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "hashtag"
@@ -5676,10 +5759,12 @@ function Portfolio() {
     className: "checkItOut"
   }, "sprawd\u017A szczeg\xF3\u0142y \u2192"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "project"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "image"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: _assets_projects_renewizytowki_jpg__WEBPACK_IMPORTED_MODULE_7__.default,
     alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "description"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "hashtag"

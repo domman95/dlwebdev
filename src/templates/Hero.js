@@ -47,7 +47,7 @@ const StyledHeader = styled.header`
 
 export default function Hero() {
   return (
-    <StyledHeader id="strona główna">
+    <StyledHeader id="strona-glowna" className="navSection">
       <div className="wrapper">
         <Socials />
         <div id="logo">

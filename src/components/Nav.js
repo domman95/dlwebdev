@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
@@ -91,42 +91,67 @@ const StyledNav = styled.nav`
   }
 `;
 
-export default function Nav() {
+export default function Nav({ location }) {
+  useEffect(() => {
+    const links = document.querySelectorAll('.link');
+
+    const activeClassName = () => {
+      links.forEach((link) => {
+        const linkHash = link.hash;
+        const brHash = window.location.hash;
+
+        if (linkHash === brHash) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    };
+
+    activeClassName();
+
+    window.addEventListener('scroll', activeClassName);
+
+    return () => {
+      window.removeEventListener('scroll', activeClassName);
+    };
+  }, []);
+
   return (
     <StyledNav>
       <ul>
         <li>
-          <Link className="link" activeClassName="active" to="/">
+          <Link className="link" to="#strona-glowna">
             <div className="circle" />
             <span>strona główna</span>
           </Link>
         </li>
         <li>
-          <Link className="link" activeClassName="active" to="/#oferta">
+          <Link className="link" to="#oferta">
             <div className="circle" />
             <span>oferta</span>
           </Link>
         </li>
         <li>
-          <Link className="link" activeClassName="active" to="/#jak-pracuje">
+          <Link className="link" to="#jak-pracuje">
             <div className="circle" />
             <span>jak pracuję?</span>
           </Link>
         </li>
         <li>
-          <Link className="link" activeClassName="active" to="/#kim-jestem">
+          <Link className="link" to="#kim-jestem">
             <div className="circle" />
             <span>kim jestem?</span>
           </Link>
         </li>
         <li>
-          <Link className="link" activeClassName="active" to="/#portfolio">
+          <Link className="link" to="#portfolio">
             <div className="circle" />
             <span>portfolio</span>
           </Link>
         </li>
         <li>
-          <Link className="link" activeClassName="active" to="/#kontakt">
+          <Link className="link" to="#kontakt">
             <div className="circle" />
             <span>kontakt</span>
           </Link>

@@ -27,6 +27,7 @@ const Wrapper = styled.div`
   }
 
   .project {
+    box-sizing: border-box;
     display: inline-flex;
     flex-direction: column;
     width: 100%;
@@ -34,6 +35,13 @@ const Wrapper = styled.div`
     box-shadow: var(--shadow);
     border-radius: 10px;
     overflow: hidden;
+    padding: 10px;
+
+    .image {
+      display: flex;
+      overflow: hidden;
+      border-radius: 10px;
+    }
 
     .description {
       background-color: white;
@@ -79,7 +87,7 @@ const Wrapper = styled.div`
       transition: transform 0.3s linear;
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
     }
   }
@@ -91,7 +99,9 @@ export default function Portfolio() {
       <Heading shadow>portfolio</Heading>
       <Wrapper>
         <div className="project">
-          <img src={iva} alt="" />
+          <div className="image">
+            <img src={iva} alt="" />
+          </div>
           <div className="description">
             <p className="hashtag">#wizytówki #salonIva #terminarz</p>
             <h4 className="title">Salon Fryzur IVA</h4>
@@ -100,7 +110,9 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="project">
-          <img src={renecup} alt="" />
+          <div className="image">
+            <img src={renecup} alt="" />
+          </div>
           <div className="description">
             <p className="hashtag">#wizytówki #salonIva #terminarz</p>
             <h4 className="title">Salon Fryzur IVA</h4>
@@ -109,7 +121,9 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="project">
-          <img src={wyhaftowani} alt="" />
+          <div className="image">
+            <img src={wyhaftowani} alt="" />
+          </div>
           <div className="description">
             <p className="hashtag">#wizytówki #salonIva #terminarz</p>
             <h4 className="title">Salon Fryzur IVA</h4>
@@ -118,7 +132,9 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="project">
-          <img src={trojakwebsite} alt="" />
+          <div className="image">
+            <img src={trojakwebsite} alt="" />
+          </div>
           <div className="description">
             <p className="hashtag">#wizytówki #salonIva #terminarz</p>
             <h4 className="title">Salon Fryzur IVA</h4>
@@ -127,7 +143,9 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="project">
-          <img src={reneelogo} alt="" />
+          <div className="image">
+            <img src={reneelogo} alt="" />
+          </div>
           <div className="description">
             <p className="hashtag">#wizytówki #salonIva #terminarz</p>
             <h4 className="title">Salon Fryzur IVA</h4>
@@ -136,7 +154,9 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="project">
-          <img src={wyhaftowani2} alt="" />
+          <div className="image">
+            <img src={wyhaftowani2} alt="" />
+          </div>
           <div className="description">
             <p className="hashtag">#wizytówki #salonIva #terminarz</p>
             <h4 className="title">Salon Fryzur IVA</h4>
@@ -145,7 +165,9 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="project">
-          <img src={wyhaftowani3} alt="" />
+          <div className="image">
+            <img src={wyhaftowani3} alt="" />
+          </div>
           <div className="description">
             <p className="hashtag">#wizytówki #salonIva #terminarz</p>
             <h4 className="title">Salon Fryzur IVA</h4>
@@ -154,7 +176,9 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="project">
-          <img src={renewizytowki} alt="" />
+          <div className="image">
+            <img src={renewizytowki} alt="" />
+          </div>
           <div className="description">
             <p className="hashtag">#wizytówki #salonIva #terminarz</p>
             <h4 className="title">Salon Fryzur IVA</h4>

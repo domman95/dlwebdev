@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
@@ -15,5 +15,9 @@ const StyledSection = styled.section`
 `;
 
 export default function Section({ children, id }) {
-  return <StyledSection id={id}>{children}</StyledSection>;
+  return (
+    <StyledSection id={id} className="navSection">
+      {children}
+    </StyledSection>
+  );
 }
