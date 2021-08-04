@@ -5123,7 +5123,6 @@ function Nav({
   } = location;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     const links = document.querySelectorAll('.link');
-    console.log(links);
 
     const activeClassName = () => {
       links.forEach(link => {
