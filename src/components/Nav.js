@@ -97,8 +97,6 @@ export default function Nav({ location }) {
   useEffect(() => {
     const links = document.querySelectorAll('.link');
 
-    console.log(links);
-
     const activeClassName = () => {
       links.forEach((link) => {
         const linkHash = link.hash;
