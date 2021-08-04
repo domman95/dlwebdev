@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "dlwebdev",
+    siteUrl: 'https://dlwebdev.com',
+    title: 'dlwebdev',
   },
-  plugins: ["gatsby-plugin-styled-components"],
+  plugins: ['gatsby-plugin-styled-components'],
 };
