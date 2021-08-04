@@ -16,9 +16,12 @@ const StyledFooter = styled.footer`
     padding: 0;
     text-align: center;
 
-    a {
-      text-decoration: none;
-      color: black;
+    .pageLink {
+      display: inline-block;
+      color: white;
+      padding: 0 5px;
+      background-color: var(--yellow);
+      transform: skew(-10deg);
     }
 
     span {
@@ -33,7 +36,9 @@ export default function Footer() {
     <StyledFooter>
       <p className="footer">
         stworzone z <span>💛</span> przez{' '}
-        <a href="https://dlwebdev.com">dlwebdev.com</a>
+        <a className="pageLink" href="https://dlwebdev.com">
+          dlwebdev.com
+        </a>
       </p>
       <p className="footer">
         @{new Date().getFullYear()} Wszelkie prawa zastrzeżone

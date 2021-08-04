@@ -11,6 +11,7 @@ import trojakwebsite from '../assets/projects/trojakwebsite.jpg';
 import wyhaftowani from '../assets/projects/wyhaftowani.jpg';
 import wyhaftowani2 from '../assets/projects/wyhaftowani2.jpg';
 import wyhaftowani3 from '../assets/projects/wyhaftowani3.jpg';
+import { Link } from 'gatsby';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -187,7 +188,9 @@ export default function Portfolio() {
           </div>
         </div>
       </Wrapper>
-      <Button primary>więcej projektów</Button>
+      <Link to="/portfolio">
+        <Button primary>więcej projektów</Button>
+      </Link>
     </Section>
   );
 }

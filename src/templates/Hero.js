@@ -54,7 +54,9 @@ export default function Hero() {
           <Logo />
         </div>
         <h1>Strony i aplikacje internetowe</h1>
-        <Button primary>sprawdź ofertę</Button>
+        <a href="#oferta">
+          <Button primary>sprawdź ofertę</Button>
+        </a>
       </div>
     </StyledHeader>
   );

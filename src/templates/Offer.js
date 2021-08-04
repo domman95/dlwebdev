@@ -34,7 +34,9 @@ export default function Offer() {
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel"
         />
       </Wrapper>
-      <Button>skontakuj się</Button>
+      <a href="#kontakt">
+        <Button>skontakuj się</Button>
+      </a>
     </Section>
   );
 }

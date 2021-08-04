@@ -42,18 +42,26 @@ const StyledSocials = styled.div`
 export default function Socials() {
   return (
     <StyledSocials>
-      <button className="socialIcon">
-        <HiOutlineMail />
-      </button>
-      <button className="socialIcon">
-        <FiLinkedin />
-      </button>
-      <button className="socialIcon">
-        <FiGithub />
-      </button>
-      <button className="socialIcon">
-        <FiInstagram />
-      </button>
+      <a href="mailto:dlwebdev@contact.com">
+        <button className="socialIcon">
+          <HiOutlineMail />
+        </button>
+      </a>
+      <a href="https://www.linkedin.com/in/dominik-lasek-5a5246207">
+        <button className="socialIcon">
+          <FiLinkedin />
+        </button>
+      </a>
+      <a href="https://github.com/domman95">
+        <button className="socialIcon">
+          <FiGithub />
+        </button>
+      </a>
+      <a href="https://www.instagram.com/dominiklasek_/">
+        <button className="socialIcon">
+          <FiInstagram />
+        </button>
+      </a>
     </StyledSocials>
   );
 }

@@ -87,7 +87,9 @@ export default function About() {
               etiam dignissim diam quis enim lobortis scelerisque fermentum dui
               faucibus in ornare quam viverra
             </p>
-            <Button primary>pobierz CV</Button>
+            <a href="https://drive.google.com/file/d/1hAyd9Nrb1sTmnst3yUvUmFKKGfDASHqK/view?usp=sharing">
+              <Button primary>pobierz CV</Button>
+            </a>
           </div>
         </StyledAbout>
       </Section>
