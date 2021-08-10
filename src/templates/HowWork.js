@@ -1,13 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useStaticQuery, graphql } from 'gatsby';
+
 import Heading from '../components/Heading';
 import Section from '../components/Section';
-import gatsby from '../assets/gatsby.jpg';
-import netlify from '../assets/netlify.jpg';
-import hasura from '../assets/hasura.jpg';
-import datocms from '../assets/datoCMS.jpg';
-import figma from '../assets/figma.jpg';
-import graphql from '../assets/graphql.jpg';
 import BgWave from '../components/BgWave';
 
 const Wrapper = styled.div`
@@ -45,6 +41,26 @@ const Content = styled.p`
 `;
 
 export default function HowWork() {
+  const { allSanityStack } = useStaticQuery(graphql`
+    query {
+      allSanityStack {
+        edges {
+          node {
+            id
+            title
+            image {
+              asset {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const data = allSanityStack.edges;
+
   return (
     <BgWave>
       <Section id="jak-pracuje">
@@ -55,24 +71,11 @@ export default function HowWork() {
           developerów jak i klientów
         </Content>
         <Wrapper>
-          <div className="servicesCard">
-            <img src={gatsby} alt="" />
-          </div>
-          <div className="servicesCard">
-            <img src={netlify} alt="" />
-          </div>
-          <div className="servicesCard">
-            <img src={hasura} alt="" />
-          </div>
-          <div className="servicesCard">
-            <img src={datocms} alt="" />
-          </div>
-          <div className="servicesCard">
-            <img src={figma} alt="" />
-          </div>
-          <div className="servicesCard">
-            <img src={graphql} alt="" />
-          </div>
+          {data.map(({ node: { id, title, image } }) => (
+            <div className="servicesCard" key={id}>
+              <img src={image.asset.url} alt={title} />
+            </div>
+          ))}
         </Wrapper>
       </Section>
     </BgWave>

@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 const StyledButton = styled.button`
   padding: 10px 35px;
   font-size: 20px;
+  font-size: clamp(16px, 1vw, 20px);
   border-radius: 50px;
   cursor: pointer;
   min-width: 200px;
@@ -44,13 +45,15 @@ export default function Button({
   primary = true,
   secondary,
   tertiary,
+  fontsize,
 }) {
   return (
     <StyledButton
       className="button"
       primary={primary}
       secondary={secondary}
-      tertiary={tertiary}>
+      tertiary={tertiary}
+      fontsize={fontsize}>
       {children}
     </StyledButton>
   );

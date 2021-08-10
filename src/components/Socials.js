@@ -30,6 +30,7 @@ const StyledSocials = styled.div`
 
       &:hover {
         transform: skew(-7deg) scale(1.1);
+        filter: drop-shadow(3px 5px 2px rgb(255 202 46 / 0.4));
       }
 
       path {

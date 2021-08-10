@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const StyledCard = styled.div`
   display: grid;
-  grid-template-rows: 1fr 1fr auto;
+  grid-template-rows: 1fr auto auto;
   justify-items: center;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -35,10 +36,21 @@ const StyledCard = styled.div`
     padding: 0 20px;
     font-size: 16px;
     font-weight: var(--regular);
+    overflow: hidden;
+    margin-bottom: 50px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
+  a {
+    display: flex;
+    justify-self: start;
+    text-decoration: none;
   }
 
   .checkItOut {
-    justify-self: start;
     margin: 0 20px;
     border: none;
     background: transparent;
@@ -55,13 +67,15 @@ const StyledCard = styled.div`
   }
 `;
 
-export default function OfferCard({ title, description }) {
+export default function OfferCard({ title, description, slug }) {
   return (
     <StyledCard>
       <h3>{title}</h3>
-      <p className="description">{description}</p>
+      <div className="description">{description}</div>
       {/* <Button secondary>więcej</Button> */}
-      <button className="checkItOut">sprawdź szczegóły →</button>
+      <Link to={`/oferta/${slug.current}`}>
+        <button className="checkItOut">sprawdź szczegóły →</button>
+      </Link>
     </StyledCard>
   );
 }

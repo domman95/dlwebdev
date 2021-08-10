@@ -36,7 +36,7 @@ const Wrapper = styled.div`
     box-shadow: var(--shadow);
     border-radius: 10px;
     overflow: hidden;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
 
     .image {
       display: flex;
@@ -75,6 +75,7 @@ const Wrapper = styled.div`
         text-transform: uppercase;
         cursor: pointer;
         transition: all 0.3s;
+        margin-top: 10px;
 
         &:hover {
           letter-spacing: 1.15px;

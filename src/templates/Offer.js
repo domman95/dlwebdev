@@ -1,3 +1,4 @@
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../components/Button';
@@ -17,26 +18,41 @@ const Wrapper = styled.div`
 `;
 
 export default function Offer() {
+  const { allSanityOffer } = useStaticQuery(graphql`
+    query {
+      allSanityOffer {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+            title
+            description
+          }
+        }
+      }
+    }
+  `);
+
+  const data = allSanityOffer.edges;
+
   return (
     <Section id="oferta">
       <Heading shadow>Oferta</Heading>
       <Wrapper>
-        <OfferCard
-          title="Aplikacje internetowe"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel"
-        />
-        <OfferCard
-          title="Strony internetowe"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel"
-        />
-        <OfferCard
-          title="Projekty graficzne"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel"
-        />
+        {data.map(({ node: { id, slug, title, description } }) => (
+          <OfferCard
+            key={id}
+            title={title}
+            description={description}
+            slug={slug}
+          />
+        ))}
       </Wrapper>
-      <a href="#kontakt">
+      <Link to="#kontakt">
         <Button>skontakuj się</Button>
-      </a>
+      </Link>
     </Section>
   );
 }

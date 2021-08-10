@@ -59,6 +59,7 @@ const Wrapper = styled.div`
         background-color: white;
         padding: 5px 20px;
         color: black;
+        white-space: nowrap;
         font-size: 16px;
         font-weight: var(--regular);
         text-transform: lowercase;
@@ -77,6 +78,8 @@ const Wrapper = styled.div`
 
     svg {
       fill: white;
+      font-size: 74px;
+      font-size: clamp(42px, 10vw, 74px);
     }
   }
 `;

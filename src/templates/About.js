@@ -50,7 +50,8 @@ const StyledAbout = styled.div`
       align-self: flex-start;
     }
 
-    .button {
+    .button,
+    .downloadCv {
       align-self: flex-end;
     }
   }
@@ -87,7 +88,9 @@ export default function About() {
               etiam dignissim diam quis enim lobortis scelerisque fermentum dui
               faucibus in ornare quam viverra
             </p>
-            <a href="https://drive.google.com/file/d/1hAyd9Nrb1sTmnst3yUvUmFKKGfDASHqK/view?usp=sharing">
+            <a
+              className="downloadCv"
+              href="https://drive.google.com/file/d/1hAyd9Nrb1sTmnst3yUvUmFKKGfDASHqK/view?usp=sharing">
               <Button primary>pobierz CV</Button>
             </a>
           </div>
