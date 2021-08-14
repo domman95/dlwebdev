@@ -88,8 +88,7 @@ const Details = styled.div`
 `;
 
 export default function detailsOffer({ location, pageContext }) {
-  const data = pageContext[0];
-  const { description, illustration } = data;
+  const { description, illustration } = pageContext;
   return (
     <Layout location={location}>
       <Main>

@@ -14,6 +14,7 @@ module.exports = {
         dataset: 'production',
         token: process.env.SANITY_TOKEN,
         grapqlTag: 'default',
+        watchMode: true,
       },
     },
   ],

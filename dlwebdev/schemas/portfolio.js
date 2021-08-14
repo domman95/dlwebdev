@@ -45,11 +45,8 @@ export default {
     {
       title: 'Technogolie',
       name: 'stack',
-      type: 'reference',
-      to: [{ type: 'stack' }],
-      options: {
-        layout: 'grid',
-      },
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'stack' }] }],
     },
   ],
 };

@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Heading from '../components/Heading';
 import Section from '../components/Section';
 import BgWave from '../components/BgWave';
+import ServiceCard from '../components/ServiceCard';
 
 const Wrapper = styled.div`
   display: grid;
@@ -13,21 +14,6 @@ const Wrapper = styled.div`
   width: 100%;
   gap: 30px;
   z-index: 10;
-
-  .servicesCard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: white;
-    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-
-    &:hover {
-      transform: scale(1.01);
-    }
-  }
 `;
 
 const Content = styled.p`
@@ -72,9 +58,7 @@ export default function HowWork() {
         </Content>
         <Wrapper>
           {data.map(({ node: { id, title, image } }) => (
-            <div className="servicesCard" key={id}>
-              <img src={image.asset.url} alt={title} />
-            </div>
+            <ServiceCard key={id} image={image.asset.url} title={title} />
           ))}
         </Wrapper>
       </Section>

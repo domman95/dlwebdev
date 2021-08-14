@@ -1,9 +1,10 @@
 const path = require('path');
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions;
+  const { createPage } = actions;
   const offerTemplate = path.resolve('src/templates/detailsOffer.js');
-  const result = await graphql(`
+  const portfolioTemplate = path.resolve('src/templates/detailsPortfolio.js');
+  const resultOffer = await graphql(`
     query {
       allSanityOffer {
         edges {
@@ -25,18 +26,53 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  // REDIRECTS
-  createRedirect({
-    fromPath: '/oferta',
-    toPath: '/oferta/strony-internetowe',
-  });
+  const resultPortfolio = await graphql(`
+    query {
+      allSanityPortfolio {
+        edges {
+          node {
+            id
+            title
+            description
+            hashtags
+            slug {
+              current
+            }
+            images {
+              asset {
+                id
+                url
+              }
+            }
+            stack {
+              id
+              title
+              image {
+                asset {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
 
   // CREATE PAGES
-  result.data.allSanityOffer.edges.forEach((edge) => {
+  resultOffer.data.allSanityOffer.edges.forEach((edge) => {
     createPage({
       path: `/oferta/${edge.node.slug.current}`,
       component: offerTemplate,
-      context: [{ ...edge.node }],
+      context: { ...edge.node },
+    });
+  });
+
+  resultPortfolio.data.allSanityPortfolio.edges.forEach((edge) => {
+    createPage({
+      path: `/portfolio/${edge.node.slug.current}`,
+      component: portfolioTemplate,
+      context: { ...edge.node },
     });
   });
 };
