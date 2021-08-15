@@ -58,9 +58,10 @@ const Wrapper = styled.div`
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--shadow);
+    padding: 10px;
 
     img {
-      object-fit: cover;
+      object-fit: fill;
       object-position: center;
       width: 100%;
       height: auto;
