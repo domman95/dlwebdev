@@ -7,6 +7,7 @@ import Section from '../components/Section';
 import Main from '../components/Main';
 import Heading from '../components/Heading';
 import ServiceCard from '../components/ServiceCard';
+import SEO from '../components/SEO';
 
 const Wrapper = styled.div`
   padding: 30px 0 20px;
@@ -132,6 +133,7 @@ export default function PortfolioPage({ location, pageContext }) {
   const { title, description, hashtags, images, stack } = pageContext;
   return (
     <Layout location={location}>
+      <SEO title={title} />
       <Main>
         <Section>
           <Heading shadow>Portfolio</Heading>
@@ -172,7 +174,12 @@ export default function PortfolioPage({ location, pageContext }) {
               <h4 className="bodyTitle">przegląd wizualny</h4>
               <div className="galleryContainer">
                 {images.map(({ asset }) => (
-                  <img className="image" src={asset.url} alt="" />
+                  <img
+                    key={asset.id}
+                    className="image"
+                    src={asset.url}
+                    alt=""
+                  />
                 ))}
               </div>
             </div>

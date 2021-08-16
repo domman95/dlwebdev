@@ -16,7 +16,7 @@ exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
   "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")),
-  "component---src-templates-details-portfolio-js": preferDefault(__webpack_require__(/*! ./src/templates/detailsPortfolio.js */ "./src/templates/detailsPortfolio.js"))
+  "component---src-templates-details-offer-js": preferDefault(__webpack_require__(/*! ./src/templates/detailsOffer.js */ "./src/templates/detailsOffer.js"))
   }
 
 
@@ -5296,7 +5296,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const StyledProject = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div.withConfig({
   displayName: "Project__StyledProject"
-})(["box-sizing:border-box;flex-direction:column;width:100%;margin-bottom:20px;box-shadow:var(--shadow);border-radius:10px;padding:10px 10px 0 10px;-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;.image{display:flex;overflow:hidden;border-radius:10px;}.description{background-color:white;padding:10px 0;z-index:10;& *{margin:0;padding:5px;}.hashtag{font-weight:(--regular);font-size:16px;color:#cecece;span{display:inline-block;}}.title{font-weight:var(--bold);font-size:18px;}.content{display:inline-block;word-break:break-word;font-size:16px;padding:0 5px;font-weight:var(--regular);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}.checkItOut{justify-self:start;border:none;background:transparent;font-size:16px;letter-spacing:1px;color:var(--yellow);text-transform:uppercase;cursor:pointer;transition:all 0.3s;margin-top:10px;&:hover{letter-spacing:1.15px;}}}img{width:100%;height:auto;transition:transform 0.3s linear;&:hover{transform:scale(1.05);}}"]);
+})(["box-sizing:border-box;flex-direction:column;width:100%;margin-bottom:20px;box-shadow:var(--shadow);border-radius:10px;padding:10px 10px 0 10px;-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;float:left;.image{display:flex;overflow:hidden;border-radius:10px;}.description{background-color:white;padding:10px 0;z-index:10;& *{margin:0;padding:5px;}.hashtag{font-weight:(--regular);font-size:16px;color:#cecece;span{display:inline-block;}}.title{font-weight:var(--bold);font-size:18px;}.content{display:inline-block;word-break:break-word;font-size:16px;padding:0 5px;font-weight:var(--regular);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}.checkItOut{justify-self:start;border:none;background:transparent;font-size:16px;letter-spacing:1px;color:var(--yellow);text-transform:uppercase;cursor:pointer;transition:all 0.3s;margin-top:10px;&:hover{letter-spacing:1.15px;}}}img{width:100%;height:auto;transition:transform 0.3s linear;&:hover{transform:scale(1.05);}}"]);
 function Project({
   title,
   description,
@@ -5339,34 +5339,65 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ SEO)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
-/* harmony import */ var _assets_favicon_ico__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/favicon.ico */ "./src/assets/favicon.ico");
+/* harmony import */ var _public_page_data_sq_d_2650605778_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/2650605778.json */ "./public/page-data/sq/d/2650605778.json");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
+/* harmony import */ var _assets_favicon_ico__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/favicon.ico */ "./src/assets/favicon.ico");
 
 
 
-function SEO() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_helmet__WEBPACK_IMPORTED_MODULE_1__.Helmet, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("link", {
+
+
+function SEO({
+  title
+}) {
+  const {
+    site
+  } = _public_page_data_sq_d_2650605778_json__WEBPACK_IMPORTED_MODULE_0__.data;
+  const {
+    defaultTitle,
+    titleTemplate,
+    description
+  } = site.siteMetadata;
+  const seo = {
+    title: title || defaultTitle
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_helmet__WEBPACK_IMPORTED_MODULE_3__.Helmet, {
+    title: seo.title,
+    titleTemplate: titleTemplate
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("link", {
     rel: "shortcut icon",
-    href: _assets_favicon_ico__WEBPACK_IMPORTED_MODULE_2__.default,
+    href: _assets_favicon_ico__WEBPACK_IMPORTED_MODULE_4__.default,
     type: "image/x-icon"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("link", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("link", {
     rel: "icon",
-    href: _assets_favicon_ico__WEBPACK_IMPORTED_MODULE_2__.default,
+    href: _assets_favicon_ico__WEBPACK_IMPORTED_MODULE_4__.default,
     type: "image/x-icon"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("link", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("link", {
     rel: "preconnect",
     href: "https://fonts.googleapis.com"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("link", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("link", {
     rel: "preconnect",
     href: "https://fonts.gstatic.com",
     crossorigin: true
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("link", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("link", {
     href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap",
     rel: "stylesheet"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("meta", {
+    name: "description",
+    content: description
   }));
 }
+const query = "2650605778";
+SEO.propTypes = {
+  title: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string)
+};
+SEO.defaultProps = {
+  title: null
+};
 
 /***/ }),
 
@@ -6000,27 +6031,27 @@ function Portfolio() {
 
 /***/ }),
 
-/***/ "./src/templates/detailsPortfolio.js":
-/*!*******************************************!*\
-  !*** ./src/templates/detailsPortfolio.js ***!
-  \*******************************************/
+/***/ "./src/templates/detailsOffer.js":
+/*!***************************************!*\
+  !*** ./src/templates/detailsOffer.js ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ PortfolioPage)
+/* harmony export */   "default": () => (/* binding */ DetailsOffer)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Button */ "./src/components/Button.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.js");
-/* harmony import */ var _components_Section__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Section */ "./src/components/Section.js");
-/* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Main */ "./src/components/Main.js");
-/* harmony import */ var _components_Heading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Heading */ "./src/components/Heading.js");
-/* harmony import */ var _components_ServiceCard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/ServiceCard */ "./src/components/ServiceCard.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.js");
+/* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Main */ "./src/components/Main.js");
+/* harmony import */ var _components_Section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Section */ "./src/components/Section.js");
+/* harmony import */ var _components_Heading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Heading */ "./src/components/Heading.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Button */ "./src/components/Button.js");
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/SEO */ "./src/components/SEO.js");
 
 
 
@@ -6031,80 +6062,50 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_8__.default.div.withConfig({
-  displayName: "detailsPortfolio__Wrapper"
-})(["padding:30px 0 20px;width:100%;display:flex;flex-direction:column;gap:20px;margin:30px 0;border-top:2px solid var(--yellow);border-bottom:2px solid var(--yellow);.head{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));grid-template-rows:470px;gap:30px;}.headContent{display:grid;grid-template-columns:1fr;grid-template-rows:auto 1fr auto;padding:10px 0;}.headTitle{h4{font-weight:var(--bold);font-size:20px;}.hashtags{gap:5px;margin:0;padding:0;color:#cecece;}.tag{display:inline-block;}}.headImage{display:flex;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background-color:", ";img{object-fit:contain;object-position:center;width:100%;height:auto;}}.headDescription{margin:20px 0;}.headLinks{display:grid;grid-template-columns:repeat(2,minmax(140px,200px));gap:20px;button{min-width:0;}}.body{display:flex;flex-direction:column;}.bodyTitle{text-transform:uppercase;font-weight:var(--bold);font-size:18px;border-bottom:2px solid var(--yellow);padding-bottom:5px;}.bodyContainer{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));grid-auto-rows:100px;padding:20px 0 10px;gap:20px;}.gallery{display:flex;flex-direction:column;}.galleryContainer{column-count:1;-webkit-column-count:1;column-gap:20px;padding:20px 0 10px;@media (min-width:530px){column-count:2;-webkit-column-count:2;}@media (min-width:840px){column-count:3;-webkit-column-count:3;}.image{margin-bottom:10px;-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;object-fit:cover;width:100%;height:auto;}}"], ({
-  bgcolor
-}) => bgcolor && `${bgcolor}`);
-function PortfolioPage({
+  displayName: "detailsOffer__Wrapper"
+})(["padding:30px 0 20px;width:100%;.offerList{display:flex;width:100%;justify-content:center;align-items:center;padding:0;border-bottom:2px solid var(--yellow);li{font-size:clamp(14px,1vw,18px);list-style:none;flex:1;padding-bottom:10px;text-align:center;&:hover a{transform:translateY(-5px);}a{display:inline-block;color:rgba(0,0,0,0.2);text-decoration:none;transition:transform 0.3s linear;height:100%;&.active{color:black;font-weight:var(--bold);transform:translateY(-5px) scale(1.05);}}}}"]);
+const Details = styled_components__WEBPACK_IMPORTED_MODULE_8__.default.div.withConfig({
+  displayName: "detailsOffer__Details"
+})(["display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));grid-auto-rows:340px;width:100%;padding:30px 0;gap:30px;.illustration{display:flex;object-fit:cover;opacity:0;transform:translateX(-4%);animation:show 0.3s ease-in-out forwards;img{width:100%;height:auto;}}.description{padding:0 10px;opacity:0;transform:translateX(4%);animation:show 0.3s ease-in-out forwards 0.3s;}@keyframes show{from{opacity:0;}to{transform:translateX(0);opacity:1;}}"]);
+function DetailsOffer({
   location,
   pageContext
 }) {
   const {
     title,
     description,
-    hashtags,
-    images,
-    stack
+    illustration
   } = pageContext;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_3__.default, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_1__.default, {
     location: location
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Main__WEBPACK_IMPORTED_MODULE_5__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Section__WEBPACK_IMPORTED_MODULE_4__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Heading__WEBPACK_IMPORTED_MODULE_6__.default, {
-    shadow: true
-  }, "Portfolio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, {
-    bgcolor: images[0].asset.gatsbyImageData.backgroundColor
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "head"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "headImage"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-    src: images[0].asset.url,
-    alt: ""
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "headContent"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "headTitle"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "hashtags"
-  }, hashtags.map((tag, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    key: i,
-    className: "tag"
-  }, "#", tag)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "headDescription"
-  }, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "headLinks"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
-    primary: true
-  }, "live"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
-    secondary: true
-  }, "github")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "body stack"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", {
-    className: "bodyTitle"
-  }, "wykorzystane technologie i narz\u0119dzia"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "bodyContainer"
-  }, stack.map(({
-    id,
-    image,
-    title
-  }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ServiceCard__WEBPACK_IMPORTED_MODULE_7__.default, {
-    key: id,
-    image: image.asset.url,
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_SEO__WEBPACK_IMPORTED_MODULE_7__.default, {
     title: title
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "gallery"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", {
-    className: "bodyTitle"
-  }, "przegl\u0105d wizualny"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "galleryContainer"
-  }, images.map(({
-    asset
-  }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-    className: "image",
-    src: asset.url,
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Main__WEBPACK_IMPORTED_MODULE_2__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Section__WEBPACK_IMPORTED_MODULE_3__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Heading__WEBPACK_IMPORTED_MODULE_4__.default, {
+    shadow: true
+  }, "Oferta"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "offerList"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_6__.Link, {
+    to: "/oferta/aplikacje-internetowe",
+    replace: true,
+    activeClassName: "active"
+  }, "Aplikacje internetowe")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_6__.Link, {
+    to: "/oferta/strony-internetowe",
+    replace: true,
+    activeClassName: "active"
+  }, "Strony internetowe")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_6__.Link, {
+    to: "/oferta/projekty-graficzne",
+    replace: true,
+    activeClassName: "active"
+  }, "Projekty graficzne"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Details, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "illustration"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    src: illustration.asset.url,
     alt: ""
-  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    to: "/#portfolio"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "description"
+  }, description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_6__.Link, {
+    to: "/#oferta"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_5__.default, {
     primary: true
   }, "powr\xF3t na stron\u0119 g\u0142\xF3wn\u0105")))));
 }
@@ -16024,7 +16025,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/vnd.microsoft.icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///7/4fP4/3jH4/84pMn/J5S5/yuBnv9Ka3b/sqik///////L3OH/oaSl//Px8P//////tNHb/4iVmf/Z09H/xej0/zfH+P8iyP//LM///y/S/v8u0v//Ib7z/xtvi/9WvN7/MtD//wNffv+UjIn/e+T//x+/9v8Xo9P/MExV/0fI9P8kyv//Msv+/y7J/f8uyPz/Lsn8/zDQ//8w1v//JMf8/zHa//8jlLH/KGh+/ynX//8vx/n/Mtv//yFndf8txff/L8v//y7K//8uyf//L83//yvG8/80ve3/Lsr//y/I+/8x1P//IpW8/yCZwf8y1f//L8n+/ybF+f9FcH3/Nsb2/y3L//8uyv//L8r+/yXL//9GfpH/kcjb/yLL//8wyf3/L9D//yer1/8ruef/L83//zLT//8bo9H/g4qM/1zO8/8myf//MMr+/zHO//8cuO7/Xmlt/6rl+f8dxf7/Mcr+/y/N//8quej/LML0/y7K//8z1v//GJG5/5uXlf+t4fP/I8b8/zLL//8vyv//Jcn//zhRWv+Nv9D/I8z//zDJ/f8vzP//K73u/y3E9/8uyf7/M9f//xiKsP+lnpz///z6/2DO9P8dx///M8r9/zHT//8inMP/J4Sk/zDT//8uyPz/L83//yq45/8swvT/Lsr//zPY//8Xh63/pp6c///////q9fj/UMv0/xzG//8qyf//MtL//y7Q//8uyf//Lsn+/y/P//8nrdr/Krrq/y7M//8z1///F4qx/5+Zl//+/v////////T5+v+O2vP/Pcn4/yTE+v8qyP3/L8r//y3I/f8w0///JJ/J/yes1/8vz///M9X//xiTvP+PjIv///////7////9///////+//D4+v/Q6/T/Wc31/ybJ//8vyPz/MdX//yKUuv8hk7n/MNT//zLS//8aoc7/dXp7/////////////v////z+///8///////9/3TU9P8hx///MMj8/zHY//8gh6j/H3aT/zHZ//8xzP//ILXn/1Fla///////////////////////+/7//////v+B1/T/IMf//zHI+/8w2f//InSN/16Rov8t1v//MMn9/ynI/f8xW2n///////////////////////z+////////od/z/x/G/v8yyf3/LNT//y5icP+3ytH/Lc3//y/J/v8tzv//LGJv///////////////////////9/v///////9vv9v8qxPj/MdT//xSp2P9ibnL//////zvG9f8rzv//Hrzv/0lqdf////////////////////////////3///////3/j9jx/yjJ//9DhZz/2tPQ//////+K1u//Jsj//0qjwv/JxMP/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/favicon-b06bb251949466e8c1628b3b6dcc1102.ico");
 
 /***/ }),
 
@@ -16085,6 +16086,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjI0IiBoZWlnaHQ9IjU3IiB2aWV3Qm94PSIwIDAgMjI0IDU3IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMjIzLjUgMzUuNTQ0M1YzNS4zMjI1TDIyMy4zMzYgMzUuMTczNkwxODYuMjc0IDEuNjI5M0wxODUuOTM5IDEuMzI1NjFMMTg1LjYwMyAxLjYyOTNMMTQ4LjkwOCAzNC44NDE5TDExMi4yNzUgMS42Mjk1N0wxMTEuOTM5IDEuMzI1MTFMMTExLjYwMyAxLjYyOTU3TDc0LjkzODggMzQuODY5NEwzOC4zMDUyIDEuNjU3MzJMMzcuOTY5NCAxLjM1Mjg2TDM3LjYzMzYgMS42NTczMkwwLjY2NDE2OCAzNS4xNzM5TDAuNSAzNS4zMjI3VjM1LjU0NDNWNTZWNTYuNUgxSDIyM0gyMjMuNVY1NlYzNS41NDQzWiIgZmlsbD0iI0ZGQ0EyRSIgc3Ryb2tlPSIjRkZDQTJFIi8+Cjwvc3ZnPgo=");
+
+/***/ }),
+
+/***/ "./public/page-data/sq/d/2650605778.json":
+/*!***********************************************!*\
+  !*** ./public/page-data/sq/d/2650605778.json ***!
+  \***********************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"defaultTitle":"dlwebdev","titleTemplate":"dlwebdev | %s","description":"dlwebdev jest firmą zajmującą się tworzeniem stron internetowych, aplikacji internetowych oraz projektów graficznych, logotypów, wizytówek. Swoje prace opieram głównie na JAMSTACK. Korzystam z headless CMS oraz zewnętrznych serwisów takich jak Netlify."}}}}');
 
 /***/ }),
 

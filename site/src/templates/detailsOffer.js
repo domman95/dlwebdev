@@ -6,6 +6,7 @@ import Section from '../components/Section';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
 import { Link } from 'gatsby';
+import SEO from '../components/SEO';
 
 const Wrapper = styled.div`
   padding: 30px 0 20px;
@@ -87,10 +88,12 @@ const Details = styled.div`
   }
 `;
 
-export default function detailsOffer({ location, pageContext }) {
-  const { description, illustration } = pageContext;
+export default function DetailsOffer({ location, pageContext }) {
+  const { title, description, illustration } = pageContext;
+
   return (
     <Layout location={location}>
+      <SEO title={title} />
       <Main>
         <Section>
           <Heading shadow>Oferta</Heading>

@@ -60,7 +60,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  // CREATE PAGES
   resultOffer.data.allSanityOffer.edges.forEach((edge) => {
     createPage({
       path: `/oferta/${edge.node.slug.current}`,
