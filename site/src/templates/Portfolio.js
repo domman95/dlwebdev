@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../components/Button';
 import Heading from '../components/Heading';
 import Section from '../components/Section';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import Project from '../components/Project';
 
 const Wrapper = styled.div`
@@ -73,9 +72,6 @@ export default function Portfolio() {
           )
         )}
       </Wrapper>
-      <Link to="/portfolio">
-        <Button primary>więcej projektów</Button>
-      </Link>
     </Section>
   );
 }

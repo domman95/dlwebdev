@@ -99,17 +99,24 @@ export default function detailsOffer({ location, pageContext }) {
               <li>
                 <Link
                   to="/oferta/aplikacje-internetowe"
+                  replace
                   activeClassName="active">
                   Aplikacje internetowe
                 </Link>
               </li>
               <li>
-                <Link to="/oferta/strony-internetowe" activeClassName="active">
+                <Link
+                  to="/oferta/strony-internetowe"
+                  replace
+                  activeClassName="active">
                   Strony internetowe
                 </Link>
               </li>
               <li>
-                <Link to="/oferta/projekty-graficzne" activeClassName="active">
+                <Link
+                  to="/oferta/projekty-graficzne"
+                  replace
+                  activeClassName="active">
                   Projekty graficzne
                 </Link>
               </li>

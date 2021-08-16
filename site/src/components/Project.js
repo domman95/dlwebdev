@@ -9,11 +9,11 @@ const StyledProject = styled.div`
   margin-bottom: 20px;
   box-shadow: var(--shadow);
   border-radius: 10px;
-  overflow: hidden;
   padding: 10px 10px 0 10px;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid;
+  float: left;
 
   .image {
     display: flex;
@@ -48,6 +48,7 @@ const StyledProject = styled.div`
 
     .content {
       display: inline-block;
+      word-break: break-word;
       font-size: 16px;
       padding: 0 5px;
       font-weight: var(--regular);

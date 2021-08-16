@@ -42,6 +42,7 @@ exports.createPages = async ({ graphql, actions }) => {
               asset {
                 id
                 url
+                gatsbyImageData
               }
             }
             stack {

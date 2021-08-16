@@ -6,9 +6,6 @@ import Layout from '../components/Layout';
 import Section from '../components/Section';
 import Main from '../components/Main';
 import Heading from '../components/Heading';
-import figma from '../assets/figma.jpg';
-import reneecup from '../assets/projects/renecup.jpg';
-import trojak from '../assets/projects/trojakwebsite.jpg';
 import ServiceCard from '../components/ServiceCard';
 
 const Wrapper = styled.div`
@@ -58,6 +55,7 @@ const Wrapper = styled.div`
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--shadow);
+    background-color: ${({ bgcolor }) => bgcolor && `${bgcolor}`};
 
     img {
       object-fit: contain;
@@ -96,24 +94,26 @@ const Wrapper = styled.div`
 
   .bodyContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 260px);
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     grid-auto-rows: 100px;
     padding: 20px 0 10px;
     gap: 20px;
   }
 
   .galleryContainer {
-    width: 100%;
     column-count: 1;
+    -webkit-column-count: 1;
     column-gap: 20px;
     padding: 20px 0 10px;
 
     @media (min-width: 530px) {
       column-count: 2;
+      -webkit-column-count: 2;
     }
 
     @media (min-width: 840px) {
       column-count: 3;
+      -webkit-column-count: 3;
     }
 
     .image {
@@ -121,24 +121,21 @@ const Wrapper = styled.div`
       -webkit-column-break-inside: avoid;
       page-break-inside: avoid;
       break-inside: avoid;
-
-      img {
-        width: 100%;
-        height: auto;
-      }
+      width: 100%;
+      height: auto;
+      float: left;
     }
   }
 `;
 
 export default function PortfolioPage({ location, pageContext }) {
-  console.log(pageContext);
   const { title, description, hashtags, images, stack } = pageContext;
   return (
     <Layout location={location}>
       <Main>
         <Section>
           <Heading shadow>Portfolio</Heading>
-          <Wrapper>
+          <Wrapper bgcolor={images[0].asset.gatsbyImageData.backgroundColor}>
             <div className="head">
               <div className="headImage">
                 <img src={images[0].asset.url} alt="" />
@@ -165,19 +162,17 @@ export default function PortfolioPage({ location, pageContext }) {
               <h4 className="bodyTitle">
                 wykorzystane technologie i narzędzia
               </h4>
-              <div className="container bodyContainer">
+              <div className="bodyContainer">
                 {stack.map(({ id, image, title }) => (
                   <ServiceCard key={id} image={image.asset.url} title={title} />
                 ))}
               </div>
             </div>
-            <div className="body gallery">
+            <div className="gallery">
               <h4 className="bodyTitle">przegląd wizualny</h4>
-              <div className="container galleryContainer">
+              <div className="galleryContainer">
                 {images.map(({ asset }) => (
-                  <div className="image" key={asset.id}>
-                    <img src={asset.url} alt="" />
-                  </div>
+                  <img className="image" src={asset.url} alt="" />
                 ))}
               </div>
             </div>
