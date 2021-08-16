@@ -13,7 +13,8 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "netlify-deploy-status-badge"
+    "netlify-deploy-status-badge",
+    "markdown"
   ],
   "env": {
     "development": {

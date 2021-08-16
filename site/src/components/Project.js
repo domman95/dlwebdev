@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import ReactMarkdown from 'react-markdown';
 
 const StyledProject = styled.div`
   box-sizing: border-box;
@@ -44,19 +45,39 @@ const StyledProject = styled.div`
     .title {
       font-weight: var(--bold);
       font-size: 18px;
+      margin: 0 5px;
     }
 
     .content {
-      display: inline-block;
-      word-break: break-word;
+      /* display: inline-block; */
       font-size: 16px;
       padding: 0 5px;
       font-weight: var(--regular);
+      word-break: break-word;
       overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 6; /* number of lines to show */
-      -webkit-box-orient: vertical;
+
+      p {
+        /* display: inline-block; */
+        display: -webkit-box;
+        line-height: 1.2em;
+        max-height: 6.8em;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        /* overflow: hidden; */
+
+        &:nth-child(n + 3) {
+          display: none;
+        }
+      }
+
+      /* p:nth-child(n + 3) {
+        display: none;
+      } */
+
+      strong {
+        padding: 0;
+      }
     }
 
     .checkItOut {
@@ -101,7 +122,7 @@ export default function Project({ title, description, image, hashtags, slug }) {
           ))}
         </p>
         <h4 className="title">{title}</h4>
-        <div className="content">{description}</div>
+        <ReactMarkdown className="content">{description}</ReactMarkdown>
         <Link to={`/portfolio/${slug}`}>
           <button className="checkItOut">sprawdź szczegóły →</button>
         </Link>

@@ -8,6 +8,7 @@ import Main from '../components/Main';
 import Heading from '../components/Heading';
 import ServiceCard from '../components/ServiceCard';
 import SEO from '../components/SEO';
+import ReactMarkdown from 'react-markdown';
 
 const Wrapper = styled.div`
   padding: 30px 0 20px;
@@ -68,6 +69,7 @@ const Wrapper = styled.div`
 
   .headDescription {
     margin: 20px 0;
+    overflow-y: auto;
   }
 
   .headLinks {
@@ -131,6 +133,7 @@ const Wrapper = styled.div`
 
 export default function PortfolioPage({ location, pageContext }) {
   const { title, description, hashtags, images, stack } = pageContext;
+
   return (
     <Layout location={location}>
       <SEO title={title} />
@@ -153,7 +156,9 @@ export default function PortfolioPage({ location, pageContext }) {
                     ))}
                   </div>
                 </div>
-                <div className="headDescription">{description}</div>
+                <ReactMarkdown className="headDescription">
+                  {description}
+                </ReactMarkdown>
                 <div className="headLinks">
                   <Button primary>live</Button>
                   <Button secondary>github</Button>

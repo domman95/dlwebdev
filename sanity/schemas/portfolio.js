@@ -22,7 +22,7 @@ export default {
     {
       title: 'Opis',
       name: 'description',
-      type: 'text',
+      type: 'markdown',
     },
     {
       title: 'Hashtags',
