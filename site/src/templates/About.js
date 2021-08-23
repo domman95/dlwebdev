@@ -81,12 +81,16 @@ export default function About() {
           <div className="contentContainer">
             <Socials />
             <p className="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-              aliquam, purus sit amet luctus venenatis, lectus magna fringilla
-              urna, porttitor rhoncus dolor purus non enim praesent elementum
-              facilisis leo, vel fringilla est ullamcorper eget nulla facilisi
-              etiam dignissim diam quis enim lobortis scelerisque fermentum dui
-              faucibus in ornare quam viverra
+              Cześć! Jestem Dominik! Zajmuję się produkcją stron i aplikacji
+              internetowych. Od ponad dwóch lat jestem w świecie web
+              developmentu i stale poszerzam swoją wiedzę. Swoje projekty buduję
+              w oparciu o nowoczesne rozwiązania i moliwości jakie oferuje
+              JAMstack. Zapytasz, czyli jakie? Przede wszystkim strony są
+              szybsze w porównaniu do tradycyjnych rozwiązań, bezpieczniejsze
+              ponieważ wszystkie zewnętrzne serwisy mają dedykowane zespoły od
+              zabezpieczeń. Mało? Zachęcam do zapoznania się z ofertą oraz do
+              kontaktu, gdzie przedstawisz mi swój problem bądź pomysł, a ja
+              dopasuję najlepsze dla Ciebie rozwiązanie!
             </p>
             <a
               className="downloadCv"
