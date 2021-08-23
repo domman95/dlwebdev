@@ -5848,7 +5848,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
 
-const GlobalStyle = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__.createGlobalStyle)([":root{--yellow:#FFCA2E;--regular:400;--medium:500;--bold:700;--extraBold:900;--shadow:0px 4px 4px rgba(0,0,0,0.25);}html{font-family:'Montserrat',sans-serif;}body{}h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;}"]);
+const GlobalStyle = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__.createGlobalStyle)([":root{--yellow:#FFCA2E;--regular:400;--medium:500;--bold:700;--extraBold:900;--shadow:0px 4px 4px rgba(0,0,0,0.25);}html{font-family:sans-serif;font-family:'Montserrat',sans-serif;}body{}h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;}"]);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GlobalStyle);
 
 /***/ }),
@@ -6278,9 +6278,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_9__.default.div.withConfig({
   displayName: "detailsPortfolio__Wrapper"
-})(["padding:30px 0 20px;width:100%;display:flex;flex-direction:column;gap:20px;margin:30px 0;border-top:2px solid var(--yellow);border-bottom:2px solid var(--yellow);.head{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));grid-template-rows:470px;gap:30px;}.headContent{display:grid;grid-template-columns:1fr;grid-template-rows:auto 1fr auto;padding:10px 0;}.headTitle{h4{font-weight:var(--bold);font-size:20px;}.hashtags{gap:5px;margin:0;padding:0;color:#cecece;}.tag{display:inline-block;}}.headImage{display:flex;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background-color:", ";img{object-fit:contain;object-position:center;width:100%;height:auto;}}.headDescription{margin:20px 0;overflow-y:auto;}.headLinks{display:grid;grid-template-columns:repeat(2,minmax(140px,200px));gap:20px;button{min-width:0;}}.body{display:flex;flex-direction:column;}.bodyTitle{text-transform:uppercase;font-weight:var(--bold);font-size:18px;border-bottom:2px solid var(--yellow);padding-bottom:5px;}.bodyContainer{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));grid-auto-rows:100px;padding:20px 0 10px;gap:20px;}.galleryContainer{column-count:1;-webkit-column-count:1;column-gap:20px;padding:20px 0 10px;@media (min-width:530px){column-count:2;-webkit-column-count:2;}@media (min-width:840px){column-count:3;-webkit-column-count:3;}.image{margin-bottom:10px;-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;width:100%;height:auto;float:left;}}"], ({
+})(["padding:30px 0 20px;width:100%;display:flex;flex-direction:column;gap:20px;margin:30px 0;border-top:2px solid var(--yellow);border-bottom:2px solid var(--yellow);.head{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));grid-template-rows:470px;gap:30px;}.headContent{display:grid;grid-template-columns:1fr;grid-template-rows:auto 1fr auto;padding:10px 0;}.headTitle{h4{font-weight:var(--bold);font-size:20px;}.hashtags{gap:5px;margin:0;padding:0;color:#cecece;}.tag{display:inline-block;}}.headImage{position:relative;display:flex;justify-content:center;align-items:center;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background:", ";.image{object-fit:contain;object-position:center;width:100%;height:auto;z-index:10;}}.headDescription{margin:20px 0;overflow-y:auto;}.headLinks{display:grid;grid-template-columns:repeat(2,minmax(140px,200px));gap:20px;button{min-width:0;}}.body{display:flex;flex-direction:column;}.bodyTitle{text-transform:uppercase;font-weight:var(--bold);font-size:18px;border-bottom:2px solid var(--yellow);padding-bottom:5px;}.bodyContainer{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));grid-auto-rows:100px;padding:20px 0 10px;gap:20px;}.galleryContainer{column-count:1;-webkit-column-count:1;column-gap:20px;padding:20px 0 10px;@media (min-width:530px){column-count:2;-webkit-column-count:2;}@media (min-width:840px){column-count:3;-webkit-column-count:3;}.image{margin-bottom:10px;-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;width:100%;height:auto;float:left;}}"], ({
   bgcolor
-}) => bgcolor && `${bgcolor}`);
+}) => bgcolor && `radial-gradient(circle, black 0%, ${bgcolor} 100%)`);
 function PortfolioPage({
   location,
   pageContext
@@ -6292,6 +6292,7 @@ function PortfolioPage({
     images,
     stack
   } = pageContext;
+  console.log(images);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_3__.default, {
     location: location
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_SEO__WEBPACK_IMPORTED_MODULE_8__.default, {
@@ -6299,12 +6300,14 @@ function PortfolioPage({
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Main__WEBPACK_IMPORTED_MODULE_5__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Section__WEBPACK_IMPORTED_MODULE_4__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Heading__WEBPACK_IMPORTED_MODULE_6__.default, {
     shadow: true
   }, "Portfolio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, {
-    bgcolor: images[0].asset.gatsbyImageData.backgroundColor
+    bgcolor: images[0].asset.gatsbyImageData.backgroundColor,
+    bg: images[0].asset.url
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "head"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "headImage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    className: "image",
     src: images[0].asset.url,
     alt: ""
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -40303,7 +40306,7 @@ module.exports = JSON.parse('{"data":{"allSanityStack":{"edges":[{"node":{"id":"
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"data":{"allSanityOffer":{"edges":[{"node":{"id":"-424cef83-3823-53d8-a6e8-576b2413770d","slug":{"current":"aplikacje-internetowe"},"title":"Aplikacje internetowe","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra"}},{"node":{"id":"-2f6b9523-f739-558b-be03-157e863a5d97","slug":{"current":"projekty-graficzne"},"title":"Projekty graficzne","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra"}},{"node":{"id":"-eee88187-bd8d-589b-bff2-29b4fd6ba579","slug":{"current":"strony-internetowe"},"title":"Strony internetowe","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra"}}]}}}');
+module.exports = JSON.parse('{"data":{"allSanityOffer":{"edges":[{"node":{"id":"-eee88187-bd8d-589b-bff2-29b4fd6ba579","slug":{"current":"strony-internetowe"},"title":"Strony internetowe","description":"Oferuję wykonanie stron internetowych dostosowanych do Twoich potrzeb. Potrzebujesz prostej strony wizytówki, która ma krótko opowiedzieć o Tobie bądź Twojej działalności? A może potrzebujesz bardziej rozbudowanej strony, na której chciałbyś reklamować swoje prace i realizacje? Może masz swój autorski pomysł i szukasz wykonawcy, który oferuje wsparcie zarówno od strony technicznej jak i designerskiej? Jeżeli tak, to gorąco zachęcam do kontaktu i współpracy. Twój pomysł i moja wiedza zdziałają cuda!"}},{"node":{"id":"-2f6b9523-f739-558b-be03-157e863a5d97","slug":{"current":"projekty-graficzne"},"title":"Projekty graficzne","description":"Oferuję wykonanie projektów graficznych takich jak projekt strony internetowej, projekt aplikacji internetowej, logo, wizytówki, grafiki. Jeżeli potrzebujesz logo dla swojego produktu czy działalności, jeżeli potrzebujesz projektu strony bądź aplikacji internetowej to dobrze trafiłeś! Napisz do mnie, a umówimy się na rozmowę i zobaczymy co jesteśmy wspólnie zdziałać!"}},{"node":{"id":"-424cef83-3823-53d8-a6e8-576b2413770d","slug":{"current":"aplikacje-internetowe"},"title":"Aplikacje internetowe","description":"Sklepy internetowe, blogi czy innego rodzaju aplikacje internetowe to dzisiaj praktycznie codzienność. Oferuję wykonanie wszelkiego rodzaju aplikacji internetowych (tzn. takich, które działają bezpośrednio w przeglądarce internetowej). Nieważne czy potrzebujesz sklepu czy bloga czy masz swój pomysł na produkt, skontaktuj się ze mną, przedstaw swoje oczekiwania i wizje, a ja dołożę wszelkich starań, aby to marzenie ujrzało światło dzienne!"}}]}}}');
 
 /***/ }),
 

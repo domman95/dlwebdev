@@ -57,9 +57,10 @@ const Wrapper = styled.div`
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    background-color: ${({ bgcolor }) => bgcolor && `${bgcolor}`};
+    background: ${({ bgcolor }) =>
+      bgcolor && `radial-gradient(circle, black 0%, ${bgcolor} 100%)`};
 
-    img {
+    .image {
       object-fit: contain;
       object-position: center;
       width: 100%;
@@ -134,16 +135,20 @@ const Wrapper = styled.div`
 export default function PortfolioPage({ location, pageContext }) {
   const { title, description, hashtags, images, stack } = pageContext;
 
+  console.log(images);
+
   return (
     <Layout location={location}>
       <SEO title={title} />
       <Main>
         <Section>
           <Heading shadow>Portfolio</Heading>
-          <Wrapper bgcolor={images[0].asset.gatsbyImageData.backgroundColor}>
+          <Wrapper
+            bgcolor={images[0].asset.gatsbyImageData.backgroundColor}
+            bg={images[0].asset.url}>
             <div className="head">
               <div className="headImage">
-                <img src={images[0].asset.url} alt="" />
+                <img className="image" src={images[0].asset.url} alt="" />
               </div>
               <div className="headContent">
                 <div className="headTitle">
