@@ -94,7 +94,7 @@ export default function About() {
             </p>
             <a
               className="downloadCv"
-              href="https://drive.google.com/file/d/1hAyd9Nrb1sTmnst3yUvUmFKKGfDASHqK/view?usp=sharing">
+              href="https://drive.google.com/file/d/1G1hEF0DQ05xXED3lE1T3R5tyF3HjIKYg/view?usp=sharing">
               <Button primary>pobierz CV</Button>
             </a>
           </div>
