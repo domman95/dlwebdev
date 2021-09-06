@@ -17,7 +17,7 @@ const StyledButton = styled.button`
       background-color: var(--yellow);
 
       &:hover {
-        background-color: white;
+        background-color: var(--white);
       }
     `}
 

@@ -8,7 +8,7 @@ const StyledNav = styled.nav`
   left: 30px;
   transform: translate(0, -50%);
   z-index: 110;
-  background-color: white;
+  background-color: var(--white);
   padding: 20px 5px;
   border-radius: 30px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -44,7 +44,7 @@ const StyledNav = styled.nav`
       white-space: nowrap;
       pointer-events: none;
       opacity: 0;
-      color: black;
+      color: var(--black);
       transition: 0.3s ease-in-out;
     }
 

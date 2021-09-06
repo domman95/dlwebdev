@@ -33,7 +33,7 @@ const StyledShadow = styled.h4`
   font-size: clamp(80px, 10vw, 100px);
   font-weight: var(--extraBold);
   text-transform: uppercase;
-  color: white;
+  color: var(--white);
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   z-index: -1;
 `;

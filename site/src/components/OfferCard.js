@@ -11,7 +11,7 @@ const StyledCard = styled.div`
   padding: 20px 10px;
   max-width: 360px;
   gap: 10px;
-  background-color: white;
+  background-color: var(--white);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 

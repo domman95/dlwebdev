@@ -39,7 +39,7 @@ const Wrapper = styled.div`
         height: 100%;
 
         &.active {
-          color: black;
+          color: var(--black);
           font-weight: var(--bold);
           transform: translateY(-5px) scale(1.05);
         }

@@ -43,7 +43,7 @@ const StyledSocials = styled.div`
 export default function Socials() {
   return (
     <StyledSocials>
-      <a href="mailto:dlwebdev@contact.com">
+      <a href="mailto:dominiklasek95@gmail.com">
         <button className="socialIcon">
           <HiOutlineMail />
         </button>
@@ -58,7 +58,7 @@ export default function Socials() {
           <FiGithub />
         </button>
       </a>
-      <a href="https://www.instagram.com/dominiklasek_/">
+      <a href="https://www.instagram.com/dlwebdev/">
         <button className="socialIcon">
           <FiInstagram />
         </button>

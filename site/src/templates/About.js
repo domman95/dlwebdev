@@ -40,7 +40,7 @@ const StyledAbout = styled.div`
     display: grid;
     justify-items: start;
     padding: 20px;
-    background: white;
+    background: var(--white);
 
     @media (min-width: 768px) {
       margin: 0 20px;

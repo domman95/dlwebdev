@@ -5,10 +5,10 @@ const StyledServiceCard = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
+  border: 1px solid var(--white);
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: white;
+  background-color: var(--white);
   transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 
   img {

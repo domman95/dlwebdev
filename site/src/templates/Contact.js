@@ -56,9 +56,9 @@ const Wrapper = styled.div`
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: white;
+        background-color: var(--white);
         padding: 5px 20px;
-        color: black;
+        color: var(--black);
         white-space: nowrap;
         font-size: 16px;
         font-weight: var(--regular);
@@ -115,17 +115,17 @@ export default function Contact() {
             <button
               className="copy"
               onClick={() => {
-                copyToClipboard('contact@dlwebdev.com');
+                copyToClipboard('dominiklasek95@gmail.com');
                 setIsCopied(true);
                 setTimeout(() => setIsCopied(false), 3000);
               }}>
-              contact@dlwebdev.com
+              dominiklasek95@gmail.com
             </button>
             <ConfettiWrapper>
               <Confetti active={isCopied} config={config} />
             </ConfettiWrapper>
           </div>
-          <a href="mailto:contact@dlwebdev.com">
+          <a href="mailto:dominiklasek95@gmail.com">
             <Button secondary>napisz do mnie</Button>
           </a>
         </Wrapper>

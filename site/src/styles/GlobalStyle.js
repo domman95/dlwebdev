@@ -3,6 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     --yellow: #FFCA2E;
+    --black: #111111;
+    --white: #fefefe;
     --regular: 400;
     --medium: 500;
     --bold: 700;
@@ -13,11 +15,6 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-family: sans-serif;
     font-family: 'Montserrat', sans-serif;
-  }
-
-  body {
-    /* width: 100vw; */
-    /* overflow-x: hidden; */
   }
 
   h1,h2,h3,h4,h5,h6 {

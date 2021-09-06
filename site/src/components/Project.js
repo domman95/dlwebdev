@@ -23,7 +23,7 @@ const StyledProject = styled.div`
   }
 
   .description {
-    background-color: white;
+    background-color: var(--white);
     padding: 10px 0;
     z-index: 10;
 

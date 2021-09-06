@@ -15,8 +15,7 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
-  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")),
-  "component---src-templates-details-portfolio-js": preferDefault(__webpack_require__(/*! ./src/templates/detailsPortfolio.js */ "./src/templates/detailsPortfolio.js"))
+  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))
   }
 
 
@@ -5230,7 +5229,7 @@ const StyledButton = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.butt
   displayName: "Button__StyledButton"
 })(["padding:10px 35px;font-size:20px;font-size:clamp(16px,1vw,20px);border-radius:50px;cursor:pointer;min-width:200px;transition:all 0.3s;", " ", " ", ""], ({
   primary
-}) => primary && (0,styled_components__WEBPACK_IMPORTED_MODULE_1__.css)(["border:2px solid var(--yellow);background-color:var(--yellow);&:hover{background-color:white;}"]), ({
+}) => primary && (0,styled_components__WEBPACK_IMPORTED_MODULE_1__.css)(["border:2px solid var(--yellow);background-color:var(--yellow);&:hover{background-color:var(--white);}"]), ({
   secondary
 }) => secondary && (0,styled_components__WEBPACK_IMPORTED_MODULE_1__.css)(["border:2px solid var(--yellow);background-color:#ffffff;&:hover{background-color:var(--yellow);}"]), ({
   tertiary
@@ -5274,7 +5273,7 @@ const StyledH2 = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.h2.withC
 })(["font-size:42px;font-size:clamp(20px,10vw,42px);font-weight:var(--extraBold);text-transform:uppercase;letter-spacing:1px;text-align:center;white-space:nowrap;z-index:10;span{display:inline-block;transition:transform 0.3s;cursor:default;&:hover{transform:scale(1.15) skewX(-5deg);}}"]);
 const StyledShadow = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.h4.withConfig({
   displayName: "Heading__StyledShadow"
-})(["position:relative;position:absolute;top:0;left:50%;white-space:nowrap;transform:translate(-50%,0%);font-size:100px;font-size:clamp(80px,10vw,100px);font-weight:var(--extraBold);text-transform:uppercase;color:white;text-shadow:0 0 2px rgba(0,0,0,0.2);z-index:-1;"]);
+})(["position:relative;position:absolute;top:0;left:50%;white-space:nowrap;transform:translate(-50%,0%);font-size:100px;font-size:clamp(80px,10vw,100px);font-weight:var(--extraBold);text-transform:uppercase;color:var(--white);text-shadow:0 0 2px rgba(0,0,0,0.2);z-index:-1;"]);
 function Heading({
   children,
   shadow = false
@@ -5384,7 +5383,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const StyledNav = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.nav.withConfig({
   displayName: "Nav__StyledNav"
-})(["position:fixed;top:50%;left:30px;transform:translate(0,-50%);z-index:110;background-color:white;padding:20px 5px;border-radius:30px;box-shadow:0px 4px 4px rgba(0,0,0,0.25);transition:0.3s linear;opacity:0.4;&:hover{opacity:1;}ul{display:flex;flex-direction:column;gap:10px;list-style:none;margin:0;padding:0;}.link{position:relative;display:flex;align-items:center;text-decoration:none;span{display:block;position:absolute;top:50%;left:50%;transform:translate(10px,-50%) skewX(70deg);padding:10px 20px;white-space:nowrap;pointer-events:none;opacity:0;color:black;transition:0.3s ease-in-out;}.circle{position:relative;width:20px;height:20px;border-radius:50%;border:2px solid var(--yellow);cursor:pointer;opacity:0.2;&:hover{opacity:1;}&:hover + span{opacity:1;transform:translate(10px,-50%) skewX(0);}&::before{display:none;content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;background-color:var(--yellow);width:80%;height:80%;}}&.active{.circle{opacity:1;}.circle::before{display:block;}}}"]);
+})(["position:fixed;top:50%;left:30px;transform:translate(0,-50%);z-index:110;background-color:var(--white);padding:20px 5px;border-radius:30px;box-shadow:0px 4px 4px rgba(0,0,0,0.25);transition:0.3s linear;opacity:0.4;&:hover{opacity:1;}ul{display:flex;flex-direction:column;gap:10px;list-style:none;margin:0;padding:0;}.link{position:relative;display:flex;align-items:center;text-decoration:none;span{display:block;position:absolute;top:50%;left:50%;transform:translate(10px,-50%) skewX(70deg);padding:10px 20px;white-space:nowrap;pointer-events:none;opacity:0;color:var(--black);transition:0.3s ease-in-out;}.circle{position:relative;width:20px;height:20px;border-radius:50%;border:2px solid var(--yellow);cursor:pointer;opacity:0.2;&:hover{opacity:1;}&:hover + span{opacity:1;transform:translate(10px,-50%) skewX(0);}&::before{display:none;content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;background-color:var(--yellow);width:80%;height:80%;}}&.active{.circle{opacity:1;}.circle::before{display:block;}}}"]);
 function Nav({
   location
 }) {
@@ -5468,7 +5467,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const StyledCard = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div.withConfig({
   displayName: "OfferCard__StyledCard"
-})(["display:grid;grid-template-rows:1fr auto auto;justify-items:center;border-radius:10px;border:1px solid rgba(0,0,0,0.25);padding:20px 10px;max-width:360px;gap:10px;background-color:white;box-shadow:0px 4px 4px rgba(0,0,0,0.25);transition:transform 0.3s cubic-bezier(0.215,0.61,0.355,1);@media (min-width:640px) and (max-width:959px){&:nth-last-child(1){grid-column:1 / -1;}}&:hover{transform:scale(1.01);}h3{font-weight:var(--bold);font-size:26px;align-self:center;text-align:center;word-spacing:30000px;}.description{padding:0 20px;font-size:16px;font-weight:var(--regular);overflow:hidden;margin-bottom:50px;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;}a{display:flex;justify-self:start;text-decoration:none;}.checkItOut{margin:0 20px;border:none;background:transparent;font-size:16px;letter-spacing:1px;color:var(--yellow);text-transform:uppercase;cursor:pointer;transition:all 0.3s;&:hover{letter-spacing:1.15px;}}"]);
+})(["display:grid;grid-template-rows:1fr auto auto;justify-items:center;border-radius:10px;border:1px solid rgba(0,0,0,0.25);padding:20px 10px;max-width:360px;gap:10px;background-color:var(--white);box-shadow:0px 4px 4px rgba(0,0,0,0.25);transition:transform 0.3s cubic-bezier(0.215,0.61,0.355,1);@media (min-width:640px) and (max-width:959px){&:nth-last-child(1){grid-column:1 / -1;}}&:hover{transform:scale(1.01);}h3{font-weight:var(--bold);font-size:26px;align-self:center;text-align:center;word-spacing:30000px;}.description{padding:0 20px;font-size:16px;font-weight:var(--regular);overflow:hidden;margin-bottom:50px;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;}a{display:flex;justify-self:start;text-decoration:none;}.checkItOut{margin:0 20px;border:none;background:transparent;font-size:16px;letter-spacing:1px;color:var(--yellow);text-transform:uppercase;cursor:pointer;transition:all 0.3s;&:hover{letter-spacing:1.15px;}}"]);
 function OfferCard({
   title,
   description,
@@ -5507,7 +5506,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const StyledProject = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div.withConfig({
   displayName: "Project__StyledProject"
-})(["box-sizing:border-box;flex-direction:column;width:100%;margin-bottom:20px;box-shadow:var(--shadow);border-radius:10px;padding:10px 10px 0 10px;-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;float:left;.image{display:flex;overflow:hidden;border-radius:10px;}.description{background-color:white;padding:10px 0;z-index:10;& *{margin:0;padding:5px;}.hashtag{font-weight:(--regular);font-size:16px;color:#cecece;span{display:inline-block;}}.title{font-weight:var(--bold);font-size:18px;margin:0 5px;}.content{font-size:16px;padding:0 5px;font-weight:var(--regular);word-break:break-word;overflow:hidden;p{display:-webkit-box;line-height:1.2em;max-height:6.8em;-webkit-line-clamp:6;-webkit-box-orient:vertical;text-overflow:ellipsis;&:nth-child(n + 3){display:none;}}strong{padding:0;}}.checkItOut{justify-self:start;border:none;background:transparent;font-size:16px;letter-spacing:1px;color:var(--yellow);text-transform:uppercase;cursor:pointer;transition:all 0.3s;margin-top:10px;&:hover{letter-spacing:1.15px;}}}img{width:100%;height:auto;transition:transform 0.3s linear;&:hover{transform:scale(1.05);}}"]);
+})(["box-sizing:border-box;flex-direction:column;width:100%;margin-bottom:20px;box-shadow:var(--shadow);border-radius:10px;padding:10px 10px 0 10px;-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;float:left;.image{display:flex;overflow:hidden;border-radius:10px;}.description{background-color:var(--white);padding:10px 0;z-index:10;& *{margin:0;padding:5px;}.hashtag{font-weight:(--regular);font-size:16px;color:#cecece;span{display:inline-block;}}.title{font-weight:var(--bold);font-size:18px;margin:0 5px;}.content{font-size:16px;padding:0 5px;font-weight:var(--regular);word-break:break-word;overflow:hidden;p{display:-webkit-box;line-height:1.2em;max-height:6.8em;-webkit-line-clamp:6;-webkit-box-orient:vertical;text-overflow:ellipsis;&:nth-child(n + 3){display:none;}}strong{padding:0;}}.checkItOut{justify-self:start;border:none;background:transparent;font-size:16px;letter-spacing:1px;color:var(--yellow);text-transform:uppercase;cursor:pointer;transition:all 0.3s;margin-top:10px;&:hover{letter-spacing:1.15px;}}}img{width:100%;height:auto;transition:transform 0.3s linear;&:hover{transform:scale(1.05);}}"]);
 function Project({
   title,
   description,
@@ -5661,7 +5660,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const StyledServiceCard = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div.withConfig({
   displayName: "ServiceCard__StyledServiceCard"
-})(["display:flex;justify-content:center;align-items:center;border:1px solid white;border-radius:10px;box-shadow:0px 4px 4px rgba(0,0,0,0.25);background-color:white;transition:transform 0.3s cubic-bezier(0.215,0.61,0.355,1);img{width:50%;height:auto;}&:hover{transform:scale(1.01);}"]);
+})(["display:flex;justify-content:center;align-items:center;border:1px solid var(--white);border-radius:10px;box-shadow:0px 4px 4px rgba(0,0,0,0.25);background-color:var(--white);transition:transform 0.3s cubic-bezier(0.215,0.61,0.355,1);img{width:50%;height:auto;}&:hover{transform:scale(1.01);}"]);
 function ServiceCard({
   image,
   title
@@ -5703,7 +5702,7 @@ const StyledSocials = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div
 })(["display:flex;justify-content:center;gap:15px;z-index:10;.socialIcon{display:flex;justify-content:center;align-items:center;width:34px;height:34px;padding:0;background-color:transparent;border:none;cursor:pointer;svg{width:100%;height:100%;stroke-width:1;&:hover{transform:skew(-7deg) scale(1.1);filter:drop-shadow(3px 5px 2px rgb(255 202 46 / 0.4));}path{stroke-width:1;}}}"]);
 function Socials() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(StyledSocials, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "mailto:dlwebdev@contact.com"
+    href: "mailto:dominiklasek95@gmail.com"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "socialIcon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_react_icons_all_files_hi_HiOutlineMail__WEBPACK_IMPORTED_MODULE_2__.HiOutlineMail, null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
@@ -5715,7 +5714,7 @@ function Socials() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "socialIcon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_react_icons_all_files_fi_FiGithub__WEBPACK_IMPORTED_MODULE_4__.FiGithub, null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "https://www.instagram.com/dominiklasek_/"
+    href: "https://www.instagram.com/dlwebdev/"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "socialIcon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_react_icons_all_files_fi_FiInstagram__WEBPACK_IMPORTED_MODULE_5__.FiInstagram, null))));
@@ -5848,7 +5847,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
 
-const GlobalStyle = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__.createGlobalStyle)([":root{--yellow:#FFCA2E;--regular:400;--medium:500;--bold:700;--extraBold:900;--shadow:0px 4px 4px rgba(0,0,0,0.25);}html{font-family:sans-serif;font-family:'Montserrat',sans-serif;}body{}h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;}"]);
+const GlobalStyle = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__.createGlobalStyle)([":root{--yellow:#FFCA2E;--black:#111111;--white:#fefefe;--regular:400;--medium:500;--bold:700;--extraBold:900;--shadow:0px 4px 4px rgba(0,0,0,0.25);}html{font-family:sans-serif;font-family:'Montserrat',sans-serif;}h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;}"]);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GlobalStyle);
 
 /***/ }),
@@ -5883,7 +5882,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const StyledAbout = styled_components__WEBPACK_IMPORTED_MODULE_7__.default.div.withConfig({
   displayName: "About__StyledAbout"
-})(["display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));justify-items:center;overflow:hidden;margin:60px 0;gap:20px;@media (min-width:600px){grid-template-columns:repeat(auto-fit,minmax(360px,1fr));}.photo{display:flex;justify-content:center;align-items:flex-end;object-fit:center;overflow:hidden;margin:0 20px;background-color:var(--yellow);img{min-width:340px;width:100%;height:auto;}}.contentContainer{display:grid;justify-items:start;padding:20px;background:white;@media (min-width:768px){margin:0 20px;}.content{align-self:flex-start;}.button,.downloadCv{align-self:flex-end;}}"]);
+})(["display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));justify-items:center;overflow:hidden;margin:60px 0;gap:20px;@media (min-width:600px){grid-template-columns:repeat(auto-fit,minmax(360px,1fr));}.photo{display:flex;justify-content:center;align-items:flex-end;object-fit:center;overflow:hidden;margin:0 20px;background-color:var(--yellow);img{min-width:340px;width:100%;height:auto;}}.contentContainer{display:grid;justify-items:start;padding:20px;background:var(--white);@media (min-width:768px){margin:0 20px;}.content{align-self:flex-start;}.button,.downloadCv{align-self:flex-end;}}"]);
 const Background = styled_components__WEBPACK_IMPORTED_MODULE_7__.default.div.withConfig({
   displayName: "About__Background"
 })(["background-image:url('", "');background-size:contain;background-repeat:no-repeat;background-position-y:center;@media (min-width:1300px){background-size:cover;background-position-y:20%;}"], _assets_lines_svg__WEBPACK_IMPORTED_MODULE_6__.default);
@@ -5902,7 +5901,7 @@ function About() {
     className: "contentContainer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Socials__WEBPACK_IMPORTED_MODULE_4__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "content"
-  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "Cze\u015B\u0107! Jestem Dominik! Zajmuj\u0119 si\u0119 produkcj\u0105 stron i aplikacji internetowych. Od ponad dw\xF3ch lat jestem w \u015Bwiecie web developmentu i stale poszerzam swoj\u0105 wiedz\u0119. Swoje projekty buduj\u0119 w oparciu o nowoczesne rozwi\u0105zania i moliwo\u015Bci jakie oferuje JAMstack. Zapytasz, czyli jakie? Przede wszystkim strony s\u0105 szybsze w por\xF3wnaniu do tradycyjnych rozwi\u0105za\u0144, bezpieczniejsze poniewa\u017C wszystkie zewn\u0119trzne serwisy maj\u0105 dedykowane zespo\u0142y od zabezpiecze\u0144. Ma\u0142o? Zach\u0119cam do zapoznania si\u0119 z ofert\u0105 oraz do kontaktu, gdzie przedstawisz mi sw\xF3j problem b\u0105d\u017A pomys\u0142, a ja dopasuj\u0119 najlepsze dla Ciebie rozwi\u0105zanie!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     className: "downloadCv",
     href: "https://drive.google.com/file/d/1hAyd9Nrb1sTmnst3yUvUmFKKGfDASHqK/view?usp=sharing"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_3__.default, {
@@ -5953,7 +5952,7 @@ const config = {
 };
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_5__.default.div.withConfig({
   displayName: "Contact__Wrapper"
-})(["width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;padding:60px 0;.email{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;font-size:46px;font-size:clamp(10px,5vw,46px);.copy{position:relative;font-weight:var(--extraBold);color:white;background-color:transparent;border:none;text-decoration:none;text-transform:uppercase;margin-left:10px;cursor:pointer;&::before{content:'kliknij, aby skopiowa\u0107';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:white;padding:5px 20px;color:black;white-space:nowrap;font-size:16px;font-weight:var(--regular);text-transform:lowercase;border-radius:20px;opacity:0;}&:hover{text-decoration:underline;}&:hover::before{opacity:1;}}svg{fill:white;font-size:74px;font-size:clamp(42px,10vw,74px);}}"]);
+})(["width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;padding:60px 0;.email{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;font-size:46px;font-size:clamp(10px,5vw,46px);.copy{position:relative;font-weight:var(--extraBold);color:white;background-color:transparent;border:none;text-decoration:none;text-transform:uppercase;margin-left:10px;cursor:pointer;&::before{content:'kliknij, aby skopiowa\u0107';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:var(--white);padding:5px 20px;color:var(--black);white-space:nowrap;font-size:16px;font-weight:var(--regular);text-transform:lowercase;border-radius:20px;opacity:0;}&:hover{text-decoration:underline;}&:hover::before{opacity:1;}}svg{fill:white;font-size:74px;font-size:clamp(42px,10vw,74px);}}"]);
 const ConfettiWrapper = styled_components__WEBPACK_IMPORTED_MODULE_5__.default.div.withConfig({
   displayName: "Contact__ConfettiWrapper"
 })(["position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"]);
@@ -5982,15 +5981,15 @@ function Contact() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_react_icons_all_files_fa_FaRegPaperPlane__WEBPACK_IMPORTED_MODULE_6__.FaRegPaperPlane, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "copy",
     onClick: () => {
-      copyToClipboard('contact@dlwebdev.com');
+      copyToClipboard('dominiklasek95@gmail.com');
       setIsCopied(true);
       setTimeout(() => setIsCopied(false), 3000);
     }
-  }, "contact@dlwebdev.com"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ConfettiWrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_dom_confetti__WEBPACK_IMPORTED_MODULE_4__.default, {
+  }, "dominiklasek95@gmail.com"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ConfettiWrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_dom_confetti__WEBPACK_IMPORTED_MODULE_4__.default, {
     active: isCopied,
     config: config
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "mailto:contact@dlwebdev.com"
+    href: "mailto:dominiklasek95@gmail.com"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
     secondary: true
   }, "napisz do mnie")))));
@@ -6016,7 +6015,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const StyledFooter = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.footer.withConfig({
   displayName: "Footer__StyledFooter"
-})(["display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;padding:10px 0 40px;.footer{font-size:16px;font-weight:var(--regular);margin:0;padding:0;text-align:center;.pageLink{display:inline-block;color:white;padding:0 5px;background-color:var(--yellow);transform:skew(-10deg);}span{display:inline-block;width:20px;}}"]);
+})(["display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;padding:10px 0 40px;.footer{font-size:16px;font-weight:var(--regular);margin:0;padding:0;text-align:center;.pageLink{display:inline-block;color:var(--white);padding:0 5px;background-color:var(--yellow);transform:skew(-10deg);}span{display:inline-block;width:20px;}}"]);
 function Footer() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(StyledFooter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "footer"
@@ -6238,127 +6237,6 @@ function Portfolio() {
     hashtags: hashtags,
     slug: slug.current
   }))));
-}
-
-/***/ }),
-
-/***/ "./src/templates/detailsPortfolio.js":
-/*!*******************************************!*\
-  !*** ./src/templates/detailsPortfolio.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ PortfolioPage)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Button */ "./src/components/Button.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.js");
-/* harmony import */ var _components_Section__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Section */ "./src/components/Section.js");
-/* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Main */ "./src/components/Main.js");
-/* harmony import */ var _components_Heading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Heading */ "./src/components/Heading.js");
-/* harmony import */ var _components_ServiceCard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/ServiceCard */ "./src/components/ServiceCard.js");
-/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/SEO */ "./src/components/SEO.js");
-/* harmony import */ var react_markdown__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-markdown */ "./node_modules/react-markdown/index.js");
-
-
-
-
-
-
-
-
-
-
-
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_9__.default.div.withConfig({
-  displayName: "detailsPortfolio__Wrapper"
-})(["padding:30px 0 20px;width:100%;display:flex;flex-direction:column;gap:20px;margin:30px 0;border-top:2px solid var(--yellow);border-bottom:2px solid var(--yellow);.head{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));grid-template-rows:470px;gap:30px;}.headContent{display:grid;grid-template-columns:1fr;grid-template-rows:auto 1fr auto;padding:10px 0;}.headTitle{h4{font-weight:var(--bold);font-size:20px;}.hashtags{gap:5px;margin:0;padding:0;color:#cecece;}.tag{display:inline-block;}}.headImage{position:relative;display:flex;justify-content:center;align-items:center;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background:", ";.image{object-fit:contain;object-position:center;width:100%;height:auto;z-index:10;}}.headDescription{margin:20px 0;overflow-y:auto;}.headLinks{display:grid;grid-template-columns:repeat(2,minmax(140px,200px));gap:20px;button{min-width:0;}}.body{display:flex;flex-direction:column;}.bodyTitle{text-transform:uppercase;font-weight:var(--bold);font-size:18px;border-bottom:2px solid var(--yellow);padding-bottom:5px;}.bodyContainer{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));grid-auto-rows:100px;padding:20px 0 10px;gap:20px;}.galleryContainer{column-count:1;-webkit-column-count:1;column-gap:20px;padding:20px 0 10px;@media (min-width:530px){column-count:2;-webkit-column-count:2;}@media (min-width:840px){column-count:3;-webkit-column-count:3;}.image{margin-bottom:10px;-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;width:100%;height:auto;float:left;}}"], ({
-  bgcolor
-}) => bgcolor && `radial-gradient(circle, black 0%, ${bgcolor} 100%)`);
-function PortfolioPage({
-  location,
-  pageContext
-}) {
-  const {
-    title,
-    description,
-    hashtags,
-    images,
-    stack
-  } = pageContext;
-  console.log(images);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_3__.default, {
-    location: location
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_SEO__WEBPACK_IMPORTED_MODULE_8__.default, {
-    title: title
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Main__WEBPACK_IMPORTED_MODULE_5__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Section__WEBPACK_IMPORTED_MODULE_4__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Heading__WEBPACK_IMPORTED_MODULE_6__.default, {
-    shadow: true
-  }, "Portfolio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, {
-    bgcolor: images[0].asset.gatsbyImageData.backgroundColor,
-    bg: images[0].asset.url
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "head"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "headImage"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-    className: "image",
-    src: images[0].asset.url,
-    alt: ""
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "headContent"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "headTitle"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "hashtags"
-  }, hashtags.map((tag, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    key: i,
-    className: "tag"
-  }, "#", tag)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_markdown__WEBPACK_IMPORTED_MODULE_10__.default, {
-    className: "headDescription"
-  }, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "headLinks"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
-    primary: true
-  }, "live"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
-    secondary: true
-  }, "github")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "body stack"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", {
-    className: "bodyTitle"
-  }, "wykorzystane technologie i narz\u0119dzia"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "bodyContainer"
-  }, stack.map(({
-    id,
-    image,
-    title
-  }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ServiceCard__WEBPACK_IMPORTED_MODULE_7__.default, {
-    key: id,
-    image: image.asset.url,
-    title: title
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "gallery"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", {
-    className: "bodyTitle"
-  }, "przegl\u0105d wizualny"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "galleryContainer"
-  }, images.map(({
-    asset
-  }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-    key: asset.id,
-    className: "image",
-    src: asset.url,
-    alt: ""
-  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    to: "/#portfolio"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
-    primary: true
-  }, "powr\xF3t na stron\u0119 g\u0142\xF3wn\u0105")))));
 }
 
 /***/ }),

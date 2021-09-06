@@ -18,7 +18,7 @@ const StyledFooter = styled.footer`
 
     .pageLink {
       display: inline-block;
-      color: white;
+      color: var(--white);
       padding: 0 5px;
       background-color: var(--yellow);
       transform: skew(-10deg);
