@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import offer from './offer';
 import portfolio from './portfolio';
 import stack from './stack';
+import products from './products';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -15,5 +16,5 @@ export default createSchema({
   name: 'default',
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([offer, portfolio, stack]),
+  types: schemaTypes.concat([products, offer, portfolio, stack]),
 });

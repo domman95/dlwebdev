@@ -15,6 +15,7 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
+  "component---src-pages-admin-js": preferDefault(__webpack_require__(/*! ./src/pages/admin.js */ "./src/pages/admin.js")),
   "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))
   }
 
@@ -5722,6 +5723,42 @@ function Socials() {
 
 /***/ }),
 
+/***/ "./src/components/layout.js":
+/*!**********************************!*\
+  !*** ./src/components/layout.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Layout)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! normalize.css */ "./node_modules/normalize.css/normalize.css");
+/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(normalize_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/GlobalStyle */ "./src/styles/GlobalStyle.js");
+/* harmony import */ var _SEO__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SEO */ "./src/components/SEO.js");
+/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Nav */ "./src/components/Nav.js");
+/* harmony import */ var _templates_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../templates/Footer */ "./src/templates/Footer.js");
+
+
+
+
+
+
+function Layout({
+  children,
+  location
+}) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SEO__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__.default, {
+    location: location
+  }), children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_templates_Footer__WEBPACK_IMPORTED_MODULE_5__.default, null));
+}
+
+/***/ }),
+
 /***/ "./src/pages/404.js":
 /*!**************************!*\
   !*** ./src/pages/404.js ***!
@@ -5759,6 +5796,49 @@ function FourOhhFour({
   }, "B\u0142\u0105d 404"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h1", null, "Upss! Nie znaleziono strony ", location.href)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_0__.Link, {
     to: "/"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__.default, null, "powr\xF3t"))));
+}
+
+/***/ }),
+
+/***/ "./src/pages/admin.js":
+/*!****************************!*\
+  !*** ./src/pages/admin.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Admin)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layout */ "./src/components/layout.js");
+
+
+
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.div.withConfig({
+  displayName: "admin__Container"
+})(["width:100%;height:76vh;display:flex;justify-content:center;align-items:center;h2{color:var(--black);text-transform:uppercase;text-align:center;}"]);
+function Admin({
+  location
+}) {
+  const isBrowser = typeof window === 'object';
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (!isBrowser) return null;
+
+    if (isBrowser) {
+      (0,gatsby__WEBPACK_IMPORTED_MODULE_1__.navigate)('https://dlwebdev.sanity.studio/desk', {
+        replace: true
+      });
+    }
+  }, [isBrowser]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_layout__WEBPACK_IMPORTED_MODULE_2__.default, {
+    location: location
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Jeste\u015B przenoszony na stron\u0119 swojego dostawcy tre\u015Bci!")));
 }
 
 /***/ }),
@@ -5903,7 +5983,7 @@ function About() {
     className: "content"
   }, "Cze\u015B\u0107! Jestem Dominik! Zajmuj\u0119 si\u0119 produkcj\u0105 stron i aplikacji internetowych. Od ponad dw\xF3ch lat jestem w \u015Bwiecie web developmentu i stale poszerzam swoj\u0105 wiedz\u0119. Swoje projekty buduj\u0119 w oparciu o nowoczesne rozwi\u0105zania i moliwo\u015Bci jakie oferuje JAMstack. Zapytasz, czyli jakie? Przede wszystkim strony s\u0105 szybsze w por\xF3wnaniu do tradycyjnych rozwi\u0105za\u0144, bezpieczniejsze poniewa\u017C wszystkie zewn\u0119trzne serwisy maj\u0105 dedykowane zespo\u0142y od zabezpiecze\u0144. Ma\u0142o? Zach\u0119cam do zapoznania si\u0119 z ofert\u0105 oraz do kontaktu, gdzie przedstawisz mi sw\xF3j problem b\u0105d\u017A pomys\u0142, a ja dopasuj\u0119 najlepsze dla Ciebie rozwi\u0105zanie!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     className: "downloadCv",
-    href: "https://drive.google.com/file/d/1hAyd9Nrb1sTmnst3yUvUmFKKGfDASHqK/view?usp=sharing"
+    href: "https://drive.google.com/file/d/1G1hEF0DQ05xXED3lE1T3R5tyF3HjIKYg/view?usp=sharing"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Button__WEBPACK_IMPORTED_MODULE_3__.default, {
     primary: true
   }, "pobierz CV"))))));
@@ -40162,7 +40242,7 @@ module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"defaultTitle":"dl
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"data":{"allSanityPortfolio":{"edges":[{"node":{"id":"-38c1ccff-4c07-5665-b37f-27abe64aa67b","title":"Trojakwoodcraft","description":"**Pierwszy projekt komercyjny wykonany na zlecenie firmy Trojak Woodcraft.**\\n\\nCelem projektu było stworzenie strony internetowej prezentującej działalność klienta. Od samego początku najważniejszym aspektem była możliwość prezentowania swoich realizacji oraz umożliwienie klientowi dokonywania prostych zmian, edycji, dodawania i usuwania realizacji bez potrzeby wykorzystywania firm trzecich. Dla spełnienia wymagań klienta zdecydowaliśmy się na wykorzystanie headlessCMS\'a - DatoCMS. Wszystkie dane są zaczytywane bezpośrednio z serwera CMSu za pomocą GraphQL\'a.\\n\\nPo za stworzeniem strony od podstaw, klient również potrzebował prostego, minimalistycznego loga, które w maksymalny sposób odwzorowywać będzie jego działalność.","hashtags":["netlify","datocms","figma","webdevelopment","gatsby","design","freelance"],"slug":{"current":"trojak-woodcraft"},"images":[{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/59b73bf344d60be819afea95a63cd913369f5368-1840x974.png"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/0394bed74832dae3081c98bc083bce1aa6779697-1857x4247.png"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/d368cf56c94fcf0a965a9708326832b076bcdb52-1857x2936.png"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/a4ccebf58c9e0720b808b0a95d23de98779e56ef-960x720.jpg"}}],"stack":[{"id":"-a7d79b0c-47d6-5d20-a359-62e563a2e534","title":"Netlify","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/cf5ecb3351adeea4fa00e68878349445dcf161ed-235x67.jpg"}}},{"id":"-e611d2d8-8b36-5316-b619-3398fd8c5212","title":"Gatsby","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/eb5881e2bd55aea8f4a18fa185f0c9a5cbc0df7b-230x65.jpg"}}},{"id":"-51f2766a-c991-5f18-9473-69cfd6a8f424","title":"Figma","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/a0938b072a32e2990c53c3c1b133c8724d51c393-204x67.jpg"}}},{"id":"-54a14227-c6df-5758-9851-bddca5829318","title":"DatoCMS","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/889fa138d98f3faa0d3ecd0ef0ce0f4fa31f1449-220x78.jpg"}}},{"id":"-9603b27e-6366-57d8-955a-fa7d8f23d994","title":"GraphQL","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/108fa1634a1bff4499238b8946a50aaf3e0ee9df-240x68.jpg"}}}]}},{"node":{"id":"-48825f7a-1ee2-58a5-8752-f6795cd268b0","title":"Renée Salon Kosmetyczny","description":"**Logo wraz z wizytówkami**\\n\\nRealizacja dotyczyła głównie wykonania nowoczesnego logo dla salonu kosmetycznego, którego motywem przewodnim jest pielęgnacja rzęs.\\n\\nKlientka zdecydowała się również na wykonanie wizytówek z terminarzem wizyt, tak aby móc zostawiać klientom papierową formę umówionych wizyt.\\n\\nProjekt został zrealizowany dla lokalnego salonu kosmetycznego Renée.","hashtags":["logo","design","figma","businesscard"],"slug":{"current":"renee-salon-kosmetyczny"},"images":[{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/89b77ed4d18fc1aefafa50e04c8825cb8d01a387-1227x1130.jpg"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/b9fac99585ac025c8d76f236b18e5b79ce8ddb77-1526x2034.jpg"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/7afeaa01cd1be8b46197998ad090d15ce9e931ff-768x1024.jpg"}}],"stack":[{"id":"-51f2766a-c991-5f18-9473-69cfd6a8f424","title":"Figma","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/a0938b072a32e2990c53c3c1b133c8724d51c393-204x67.jpg"}}}]}},{"node":{"id":"-e96cd722-9fd2-5105-84b8-faa7a44c35af","title":"IVA Salon Fryzjerski","description":"**Wizytówki z terminarzem wizyt**\\n\\nRealizacja dotyczyła wykonania projektu wizytówek wraz z terminarzem, na którym zapisywane będą wizyty klienta.\\n\\nZrealizowane dla lokalnego salonu fryzjerskiego IVA Salon Fryzur.","hashtags":["design","figma","businesscard"],"slug":{"current":"iva-salon-fryzjerski"},"images":[{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/cd94197a753b4aa3c520976e50306b925b7fdf2a-1536x2048.jpg"}}],"stack":[{"id":"-51f2766a-c991-5f18-9473-69cfd6a8f424","title":"Figma","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/a0938b072a32e2990c53c3c1b133c8724d51c393-204x67.jpg"}}}]}},{"node":{"id":"-11a26334-eb10-583e-b4ec-7196ca849a49","title":"wyhaftowani","description":"**Wykonanie logo dla [wy.haftowani](https://www.instagram.com/wy.haftowani/)**\\n\\nLogo zostało wykonane dla klientki, która tworzy rękodzieła, głównie są to tamborki. Chciała, aby logo najmożliwiej kojarzyło się właśnie z nimi, a zarazem było proste i minimalistyczne.","hashtags":["logo","design","figma"],"slug":{"current":"wyhaftowani"},"images":[{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/5c1de67354596237732f3a11cb40e44f565270c8-409x406.jpg"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/6d9009e948239223a5650dc185f276366a5eea46-2386x2207.jpg"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/893103d7f2f99c999cfec2066798cf444e173471-1183x1183.jpg"}}],"stack":[{"id":"-51f2766a-c991-5f18-9473-69cfd6a8f424","title":"Figma","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/a0938b072a32e2990c53c3c1b133c8724d51c393-204x67.jpg"}}}]}}]}}}');
+module.exports = JSON.parse('{"data":{"allSanityPortfolio":{"edges":[{"node":{"id":"-38c1ccff-4c07-5665-b37f-27abe64aa67b","title":"Trojakwoodcraft","description":"**Pierwszy projekt komercyjny wykonany na zlecenie firmy Trojak Woodcraft.**\\n\\nCelem projektu było stworzenie strony internetowej prezentującej działalność klienta. Od samego początku najważniejszym aspektem była możliwość prezentowania swoich realizacji oraz umożliwienie klientowi dokonywania prostych zmian, edycji, dodawania i usuwania realizacji bez potrzeby wykorzystywania firm trzecich. Dla spełnienia wymagań klienta zdecydowaliśmy się na wykorzystanie headlessCMS\'a - DatoCMS. Wszystkie dane są zaczytywane bezpośrednio z serwera CMSu za pomocą GraphQL\'a.\\n\\nPo za stworzeniem strony od podstaw, klient również potrzebował prostego, minimalistycznego loga, które w maksymalny sposób odwzorowywać będzie jego działalność.","hashtags":["netlify","datocms","figma","webdevelopment","gatsby","design","freelance"],"slug":{"current":"trojak-woodcraft"},"images":[{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/59b73bf344d60be819afea95a63cd913369f5368-1840x974.png"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/0394bed74832dae3081c98bc083bce1aa6779697-1857x4247.png"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/d368cf56c94fcf0a965a9708326832b076bcdb52-1857x2936.png"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/a4ccebf58c9e0720b808b0a95d23de98779e56ef-960x720.jpg"}}],"stack":[{"id":"-a7d79b0c-47d6-5d20-a359-62e563a2e534","title":"Netlify","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/cf5ecb3351adeea4fa00e68878349445dcf161ed-235x67.jpg"}}},{"id":"-e611d2d8-8b36-5316-b619-3398fd8c5212","title":"Gatsby","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/eb5881e2bd55aea8f4a18fa185f0c9a5cbc0df7b-230x65.jpg"}}},{"id":"-51f2766a-c991-5f18-9473-69cfd6a8f424","title":"Figma","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/a0938b072a32e2990c53c3c1b133c8724d51c393-204x67.jpg"}}},{"id":"-54a14227-c6df-5758-9851-bddca5829318","title":"DatoCMS","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/889fa138d98f3faa0d3ecd0ef0ce0f4fa31f1449-220x78.jpg"}}},{"id":"-9603b27e-6366-57d8-955a-fa7d8f23d994","title":"GraphQL","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/108fa1634a1bff4499238b8946a50aaf3e0ee9df-240x68.jpg"}}}]}},{"node":{"id":"-48825f7a-1ee2-58a5-8752-f6795cd268b0","title":"Renée Salon Kosmetyczny","description":"**Logo wraz z wizytówkami**\\n\\nRealizacja dotyczyła głównie wykonania nowoczesnego logo dla salonu kosmetycznego, którego motywem przewodnim jest pielęgnacja rzęs.\\n\\nKlientka zdecydowała się również na wykonanie wizytówek z terminarzem wizyt, tak aby móc zostawiać klientom papierową formę umówionych wizyt.\\n\\nProjekt został zrealizowany dla lokalnego salonu kosmetycznego Renée.","hashtags":["logo","design","figma","businesscard"],"slug":{"current":"renee-salon-kosmetyczny"},"images":[{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/89b77ed4d18fc1aefafa50e04c8825cb8d01a387-1227x1130.jpg"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/b9fac99585ac025c8d76f236b18e5b79ce8ddb77-1526x2034.jpg"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/7afeaa01cd1be8b46197998ad090d15ce9e931ff-768x1024.jpg"}}],"stack":[{"id":"-51f2766a-c991-5f18-9473-69cfd6a8f424","title":"Figma","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/a0938b072a32e2990c53c3c1b133c8724d51c393-204x67.jpg"}}}]}},{"node":{"id":"-e96cd722-9fd2-5105-84b8-faa7a44c35af","title":"IVA Salon Fryzjerski","description":"**Wizytówki z terminarzem wizyt**\\n\\nRealizacja dotyczyła wykonania projektu wizytówek wraz z terminarzem, na którym zapisywane będą wizyty klienta.\\n\\nZrealizowane dla lokalnego salonu fryzjerskiego IVA Salon Fryzur.","hashtags":["design","figma","businesscard"],"slug":{"current":"iva-salon-fryzjerski"},"images":[{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/cd94197a753b4aa3c520976e50306b925b7fdf2a-1536x2048.jpg"}}],"stack":[{"id":"-51f2766a-c991-5f18-9473-69cfd6a8f424","title":"Figma","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/a0938b072a32e2990c53c3c1b133c8724d51c393-204x67.jpg"}}}]}},{"node":{"id":"-11a26334-eb10-583e-b4ec-7196ca849a49","title":"wyhaftowani","description":"**Wykonanie logo dla [wy.haftowani](https://www.instagram.com/wy.haftowani/)**\\n\\nLogo zostało wykonane dla klientki, która tworzy rękodzieła, głównie są to tamborki. Chciała, aby logo najmożliwiej kojarzyło się właśnie z nimi, a zarazem było proste i minimalistyczne.","hashtags":["logo","design","figma"],"slug":{"current":"wyhaftowani"},"images":[{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/5c1de67354596237732f3a11cb40e44f565270c8-409x406.jpg"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/6d9009e948239223a5650dc185f276366a5eea46-2386x2207.jpg"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/893103d7f2f99c999cfec2066798cf444e173471-1183x1183.jpg"}}],"stack":[{"id":"-51f2766a-c991-5f18-9473-69cfd6a8f424","title":"Figma","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/a0938b072a32e2990c53c3c1b133c8724d51c393-204x67.jpg"}}}]}},{"node":{"id":"-610284cf-87de-5dfd-bc54-8fe984509592","title":"Mat-Dab Meble na Wymiar","description":"Projekt powstał na potrzeby lokalnego stolarza, który oprócz facebooka i instagrama chce prezentować swoje prace za pomocą strony internetowej. Po szczegółowej rozmowie ustaliliśmy czego od siebie oczekujemy. Strona miała być prosta, prezentująca najważniejsze treści bez zbędnego \\"lania wody\\". Tak więc powstała klasyczna strona, która zawiera dwie podstrony przedstawiające ofertę oraz realizacji. Całość została napisana w Gatsby.JS, a za zarządzanie treściami odpowiedzialny jest headless CMS - sanity.io. Wszystko tak, aby klient mógł samodzielnie dokonywać prostych edycji na stronie.","hashtags":["jamstack","design","ui","gatsby"],"slug":{"current":"mat-dab-meble-na-wymiar"},"images":[{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/401a2e8ac1612b3bc78a402ae2d604d9c9676612-2365x4345.png"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/4a578ea21625a63b91cffbbf8e46df810834384c-2365x1612.png"}},{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/c128b1883914e0bd64d77bbfe75ee01ed71a4140-2365x2594.png"}}],"stack":[{"id":"-a7d79b0c-47d6-5d20-a359-62e563a2e534","title":"Netlify","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/cf5ecb3351adeea4fa00e68878349445dcf161ed-235x67.jpg"}}},{"id":"-e611d2d8-8b36-5316-b619-3398fd8c5212","title":"Gatsby","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/eb5881e2bd55aea8f4a18fa185f0c9a5cbc0df7b-230x65.jpg"}}},{"id":"-add3333d-22b0-5209-a9ba-645b934df971","title":"Sanity","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/9170f774d3bd459a4dd9e9238aaf72ec84cf594d-233x47.jpg"}}},{"id":"-51f2766a-c991-5f18-9473-69cfd6a8f424","title":"Figma","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/a0938b072a32e2990c53c3c1b133c8724d51c393-204x67.jpg"}}},{"id":"-ff3ee2d6-e165-504f-95e1-517601cd397c","title":"GitHub","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/4c0d8749fc3cd89f447dc582498cdd576650e3b8-222x64.jpg"}}},{"id":"-9603b27e-6366-57d8-955a-fa7d8f23d994","title":"GraphQL","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/108fa1634a1bff4499238b8946a50aaf3e0ee9df-240x68.jpg"}}},{"id":"-860f1aec-bcd4-5a3a-a06f-507eea2ef15d","title":"Procreate","image":{"asset":{"url":"https://cdn.sanity.io/images/18gj91ct/production/4fd17097fd7ecb020d56bbb7d285aadbf6ccb452-234x52.jpg"}}}]}}]}}}');
 
 /***/ }),
 
