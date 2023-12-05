@@ -82,8 +82,8 @@ export default function About() {
             <Socials />
             <p className="content">
               Cześć! Jestem Dominik! Zajmuję się produkcją stron i aplikacji
-              internetowych. Od ponad dwóch lat jestem w świecie web
-              developmentu i stale poszerzam swoją wiedzę. Swoje projekty buduję
+              internetowych. Od ponad czterech lat jestem w świecie web
+              developmentu, a od sierpnia 2022 jestem częścią zespołu <a href="https://www.xolv.io/">Xolvio</a>. Swoje projekty buduję
               w oparciu o nowoczesne rozwiązania i moliwości jakie oferuje
               JAMstack. Zapytasz, czyli jakie? Przede wszystkim strony są
               szybsze w porównaniu do tradycyjnych rozwiązań, bezpieczniejsze
